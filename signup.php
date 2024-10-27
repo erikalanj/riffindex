@@ -3,55 +3,39 @@ require "top.php"; // Includes the top section (head, opening body tag)
 require "nav.php"; // Includes the navigation bar
 ?>
 
-<body>
-    <div class="container">
-      <div class="sign-up-form">
-        <!-- Left (Form Image) -->
-        <div class="form-image">
-          <img src="./assets/form-bg.png" alt="" />
+<div class="container">
+    <div class="login-box">
+        <div class="login-header">
+            <header>Sign Up</header>
         </div>
-        <!-- Right (Form Content) -->
-        <form class="form-content" action="signup.php" method="POST">
-          <!-- Form Heading -->
-          <div class="form-heading">
-            <img src="./assets/logo.png" alt="" />
-            <h1>Create Account</h1>
-            <p>Please fill out all the required fields to create your account!</p>
-          </div>
-          <!-- Input Wrap -->
-          <div class="input-wrap">
-            <div class="input">
-              <input type="text" id="username" name="username" placeholder=" " required />
-              <div class="label">
-                <label for="username">Username</label>
-              </div>
-            </div>
-            <div class="input">
-              <input type="email" id="email" name="email" placeholder=" " required />
-              <div class="label">
-                <label for="email">Email</label>
-              </div>
-            </div>
-            <div class="input">
-              <input type="password" id="password" name="password" placeholder=" " required />
-              <div class="label">
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <div class="input">
-              <input type="password" id="confirmPassword" name="confirmPassword" placeholder=" " required />
-              <div class="label">
-                <label for="confirmPassword">Confirm Password</label>
-              </div>
-            </div>
-            <button type="submit">Create Account</button>
-          </div>
-        </form>
-      </div>
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Full Name" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Confirm Password" autocomplete="off" required>
+        </div>
+        <div class="forgot">
+            <section>
+                <input type="checkbox" id="check">
+                <label for="check">Remember me</label>
+            </section>
+        </div>
+        <div class="input-submit">
+            <button class="submit-btn" id="submit"></button>
+            <label for="submit">Sign up</label>
+        </div>
+        <div class="sign-up-link">
+            <p>Already have account? <a href="login.php">Log In</a></p>
+        </div>
     </div>
-</body>
+</div>
 
 <?php
 require "foot.php"; // Includes the footer and closing body/html tags
-?>
-
+?>      

@@ -1,176 +1,334 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
 
-/* Start of login and signup css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  body {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    background-color: #f1f1f1;
-    font-weight: 300;
-    padding: 0 24px;
-  }
-  
-  .sign-up-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 900px;
-    width: 100%;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border-radius: 12px;
-    background-color: #fff;
-  }
-  
-  .form-image {
-    display: none;
-  }
-  
-  /* Form Content */
-  .form-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 32px;
-  }
-  
-  /* From Heading */
-  
-  .form-heading {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-  
-  .form-heading img {
-    width: 50px;
-    height: auto;
-  }
-  
-  h1 {
-    font-size: 24px;
-    font-weight: 500;
-  }
-  
-  p {
-    font-size: 14px;
-  }
-  
-  /* Form fields */
-  
-  .input-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    width: 100%;
-  }
-  
-  .input {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px 0;
-    border: none;
-    border-bottom: 1px solid #181824;
-    transition: 300ms;
-    font-size: 14px;
-    font-weight: 300;
-  }
-  
-  input:focus {
-    outline: none;
-    box-shadow: 0 1px 0 0 black;
-    border-color: black;
-  }
-  
-  .label {
-    display: flex;
-    position: absolute;
-    height: 100%;
-    align-items: center;
-    transition: 300ms ease;
-  }
-  
-  label {
+/* Global background color */
+html, body {
+  min-height: 100vh;
+  background-color: #dfdfdf;
+  margin: 0;
+  padding: 0;
+}
+
+/* start of header */
+
+/* Style the header with a dark background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #333; /* Dark background color */
+  padding: 20px 10px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between logo and nav links */
+  align-items: center; /* Center items vertically */
+}
+
+/* Style the header links */
+.header a {
+  color: white; /* Change text color to white */
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style for the open sidenav button */
+.open-sidenav {
+  font-size: 18px; /* Match the font size with header links */
+  cursor: pointer;
+  color: white; /* Change the color to match your header */
+  padding: 12px; /* Add padding for better spacing */
+  margin-right: 20px; /* Add space between the button and logo */
+}
+
+/* Optionally, you can add hover effect */
+.open-sidenav:hover {
+  background-color: #575757; /* Darker shade on hover */
+  color: white; /* Ensure text remains white */
+}
+
+/* Style the logo link */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #575757; /* Darker shade on hover */
+  color: white; /* Ensure text remains white */
+}
+
+/* Style the active/current link */
+.header a.active {
+  background-color: dodgerblue; /* Keep active link color */
+  color: white; /* Ensure text remains white */
+}
+
+/* Align links horizontally */
+.header-right {
+  display: flex; /* Align links horizontally */
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 500px) {
+  .header a {
     display: block;
-    font-size: 14px;
-    color: #b0b0b0;
+    text-align: left;
   }
-  
-  /* Label Effect */
-  input:focus + .label,
-  input:not(:placeholder-shown) + .label {
-    transform: translateY(-27px);
-  }
-  
-  input:focus + .label label,
-  input:not(:placeholder-shown) + .label label {
-    font-weight: 500;
-    color: initial;
-  }
-  
+}
 
-  button {
-    width: 100%;
-    padding: 12px 18px;
+/* end of header */
+
+/* start of sidenav */
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #333; /* Dark background */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* Transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Change color on mouse over */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Close button style */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content to push to the right when the sidenav is open */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* end of sidenav */
+
+/* start of footer */
+
+.footer {
+  overflow: hidden;
+  background-color: #333; /* Dark background color */
+  padding: 20px 10px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 15px; /* Add spacing between links */
+}
+
+/* Style the footer links */
+.footer a {
+  color: white; /* Change text color to white */
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link */
+.footer a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.footer a:hover {
+  background-color: #575757; /* Darker shade on hover */
+  color: white; /* Ensure text remains white */
+}
+
+/* Style the active/current link */
+.footer a.active {
+  background-color: dodgerblue; /* Active link color */
+  color: white; /* Ensure text remains white */
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 500px) {
+  .footer a {
+    display: block;
+    text-align: left;
+  }
+}
+
+/* end of footer */
+
+/* start of footer-bottom */
+
+.footer-bottom {
+  overflow: hidden;
+  background-color: #333; /* Dark background color */
+  padding: 1px 1px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+ 
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 500px) {
+  .footer-bottom a {
+    display: block;
+    text-align: left;
+  }
+}
+
+.footer-bottom p {
+  color: white;
+}
+
+/* end of footer-bottom */
+
+/* start of login */
+
+/* New container styling to replace body styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #dfdfdf;
+}
+
+/* Original login-box and other styling */
+.login-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 440px;
+    height: 480px;
+    padding: 30px;
+}
+
+.login-header {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.login-header header {
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.input-box .input-field {
+    width: 90%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
     border: none;
-    align-self: flex-start;
-    background-color: black;
-    color: #fff;
-    border-radius: 13px;
-    transition: 300ms;
-  }
-  
-  button:hover {
+    box-shadow: 0px 5px 10px 1px rgba(0,0,0, 0.05);
+    outline: none;
+    transition: .3s;
+}
+
+::placeholder {
+    font-weight: 500;
+    color: #222;
+}
+
+.input-field:focus {
+    width: 105%;
+}
+
+.forgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+}
+
+#check {
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section a {
+    color: #555;
+}
+
+.input-submit {
+    position: relative;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
-    background-color: #f1f1f1;
-    color: black;
-    box-shadow: 0 10px 13px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-  
-  
-  /* Desktop Styles */
-  @media (min-width: 900px) {
-    .sign-up-form {
-      flex-direction: row;
-    }
-  
-    /* Image / Branding */
-  
-    .form-image {
-      display: block;
-      flex-basis: 45%;
-      background-image: url("./assets/bg-black-square.png");
-      border-radius: 12px 0 0 12px;
-    }
-  
-    .form-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px 0 0 12px;
-    }
-  
-    h1 {
-      font-size: 32px;
-      font-weight: 500;
-    }
-  
-    p {
-      font-size: 16px;
-    }
-  }
+    transition: .3s;
+}
 
-  /* End of login and signup css */
-        
-    
+.input-submit label {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
 
+.submit-btn:hover {
+    background: #000;
+    transform: scale(1.05,1);
+}
 
+.sign-up-link {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.sign-up-link a {
+    color: #000;
+    font-weight: 600;
+}
+
+/* end of login css */

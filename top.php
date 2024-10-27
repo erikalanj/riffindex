@@ -9,3 +9,12 @@
 </head>
 
 <body>
+<div class="header">
+    <!-- Button to open the sidenav -->
+    <span class="open-sidenav" onclick="openNav()">&#9776;</span>
+    <a href="index.php" class="logo">RiffIndex</a>
+    <div class="header-right">
+    
+        <a href="about.php">About</a>
+    </div>
+</div>
