@@ -6,7 +6,7 @@ require "nav.php"; // Includes the navigation bar
 <div class="container">
     <div class="login-box">
         <div class="login-header">
-            <header>Login</header>
+            <header>Login!</header>
         </div>
         <div class="input-box">
             <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
