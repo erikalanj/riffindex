@@ -1,3 +1,6 @@
+--In phpmyAdmin, create a database called RiffIndex (matches hardcoded host in db_connect.php), and then paste this script 
+--into the SQL window under the RiffIndex database. 
+
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
