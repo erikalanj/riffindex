@@ -332,3 +332,44 @@ section a {
 }
 
 /* end of login css */
+
+/* index slideshow */
+
+/* styles.css */
+.mySlides {
+  display: none; /* Hide all slides by default */
+}
+
+.w3-display-container {
+  position: relative;
+}
+
+.w3-center {
+  text-align: center;
+}
+
+.w3-display-bottommiddle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 32px;
+}
+
+.w3-text-white {
+  color: white;
+}
+
+.w3-hide-small {
+  display: block; /* Change this if you have media queries to hide on small screens */
+}
+
+/* Set the image dimensions */
+.w3-display-container img {
+  width: 100%; /* Full width of the container */
+  height: 800px; /* Set a fixed height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+
+/* end of index slideshow */

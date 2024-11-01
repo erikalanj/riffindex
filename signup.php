@@ -2,6 +2,7 @@
 require "top.php"; // Includes the top section (head, opening body tag)
 require "nav.php"; // Includes the navigation bar
 
+
 // Database connection
 require "db_connect.php"; // Adjust to your actual database connection file
 
