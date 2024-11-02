@@ -28,7 +28,51 @@ require "nav.php"; // Include your navigation bar
     </div>
 </div>
 
+<div class="container">
+    <!-- The Band Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" id="band">
+        <h2 class="w3-wide">New Music</h2>
+        <p class="w3-opacity"><i>We love music</i></p>
+        <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <!-- The Gallery Section -->
+    <div class="gallery-container">
+        <div class="gallery">
+            <a target="_blank" href="img_5terre.jpg">
+                <img src="images/stokes1.jpg" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="img_forest.jpg">
+                <img src="images/nirvana1.jpg" alt="Forest" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="img_lights.jpg">
+                <img src="images/qotsa1.jpg" alt="Northern Lights" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="img_mountains.jpg">
+                <img src="images/nirvana1.jpg" alt="Mountains" width="600" height="400">
+            </a>
+            <div class="desc">Add a description of the image here</div>
+        </div>
+    </div>
+</div>
+
 <?php require "foot.php"; // Include your footer ?>
+
+
 
 
 

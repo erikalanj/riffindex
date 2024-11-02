@@ -373,3 +373,56 @@ section a {
 
 
 /* end of index slideshow */
+
+/* start of index new music section */
+.container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 10px 0; /* Reduce padding to bring everything up */
+}
+
+/* The Band Section */
+#w3-band {
+  max-width: 800px; /* Max width for the band section */
+  margin: 0 auto 10px; /* Remove top margin, keep some space below */
+  padding: 10px 0; /* Reduce top and bottom padding */
+}
+
+/* Optional: Adjusting the W3 Container */
+.w3-container {
+  padding-top: 0; /* Remove any top padding */
+  margin-top: 0; /* Remove any top margin */
+}
+
+
+/* start of gallery of new music */
+.gallery-container {
+  display: flex; /* Use Flexbox for the gallery items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center the gallery items */
+  margin-top: 10px; /* Reduce space above the gallery */
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  width: 180px; /* Fixed width for the gallery items */
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+/* end of gallery of new music */
