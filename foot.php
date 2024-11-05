@@ -3,7 +3,7 @@
     <div class="footer">
         <a href="reviews.php">Reviews</a>
         <a href="riff.php">Riff</a>
-        <a href="database.php">Database</a>
+        <a href="band_database.php">Database</a>
         <a href="index.php">Home</a>
         <a href="signup.php">Sign up</a>
         <a href="login.php">Log in</a>

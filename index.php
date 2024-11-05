@@ -1,72 +1,77 @@
 <?php
-require "top.php"; // Include your top section (header, etc.)
-require "nav.php"; // Include your navigation bar
-?>
+require "top.php"; 
+require "nav.php"; 
+?> 
 
-<link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"> 
 
-<!-- Automatic Slideshow Images -->
-<div class="mySlides w3-display-container w3-center">
-    <img src="images/nirvana1.jpg" alt="Los Angeles">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Los Angeles</h3>
-      <p><b>We had the best time playing at Venice Beach!</b></p>   
+<!-- main container -->
+<main class="container my-5 d-flex justify-content-center">
+    <!-- carousel card container with text on top -->
+    <div class="card shadow-lg rounded-lg" style="max-width: 1000px;"> 
+        <!-- description section on top -->
+        <div class="card-header text-center bg-white border-0">
+            <h2 class="display-4">Rock out!</h2> 
+            <p class="lead">Enjoy a look at some of our favorite bands right now and their live performances!</p> 
+        </div>
+
+        <!-- carousel body with padding and rounded corners -->
+        <div class="card-body p-0">
+            <!-- carousel component -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active">
+                        <img src="images/nirvana1.jpg" class="d-block w-100 carousel-image" alt="Nirvana">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="text-container">
+                                <h3>Nirvana</h3>
+                                <p>Debatably the Best Grunge Band of the 90's!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/qotsa1.jpg" class="d-block w-100 carousel-image" alt="Qotsa">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="text-container">
+                                <h3>Queens of the Stone Age</h3>
+                                <p>QOTSA touring for their newest 2023 album, "In Times New Roman..."!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/stokes1.jpg" class="d-block w-100 carousel-image" alt="strokes">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="text-container">
+                                <h3>The Strokes</h3>
+                                <p>The Famous 2 Dollar MTV Strokes Performance which Revived Garage Rock in the Early 2000's!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- controls for carousel -->
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
-<div class="mySlides w3-display-container w3-center">
-    <img src="images/qotsa1.jpg" alt="New York">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>New York</h3>
-      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
-    </div>
-</div>
-<div class="mySlides w3-display-container w3-center">
-    <img src="images/stokes1.jpg" alt="Chicago">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Chicago</h3>
-      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
-    </div>
-</div>
+</main>
 
+<?php require "foot.php"; ?>
 
-
-
-
-
-<?php require "foot.php"; // Include your footer ?>
-
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -7,6 +7,43 @@ html, body {
   padding: 0;
 }
 
+/* Larger height for the carousel container */
+.carousel-image {
+  max-height: 600px; /* Set fixed height */
+  object-fit: cover; /* Ensures image fills the container */
+  width: 100%;
+}
+
+/* Styling for the carousel card container */
+.card {
+  border: none;
+  border-radius: 80px; /* Rounded edges */
+}
+.carousel-inner {
+  border-radius: 80px; /* Carousel images rounded */
+}
+
+/* Center and style the card */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-caption {
+  position: absolute; /* Position caption absolutely */
+  bottom: 20px; /* Distance from the bottom */
+  left: 50%; /* Center caption */
+  transform: translateX(-50%); /* Center caption */
+}
+
+.text-container {
+  background-color: rgba(128, 128, 128, 0.7); /* Translucent gray background */
+  padding: 15px; /* Padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+}
+
 /* start of header */
 
 /* Style the header with a dark background and some padding */
