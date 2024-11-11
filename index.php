@@ -1,19 +1,19 @@
 <?php
-require "top.php"; 
-require "nav.php"; 
-?> 
+require "top.php";
+require "nav.php";
+?>
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"> 
+<link rel="stylesheet" href="styles.css">
 
 <!-- main container -->
 <main class="container my-5 d-flex justify-content-center">
     <!-- carousel card container with text on top -->
-    <div class="card shadow-lg rounded-lg" style="max-width: 1000px;"> 
+    <div class="card shadow-lg rounded-lg" style="max-width: 1000px;">
         <!-- description section on top -->
         <div class="card-header text-center bg-white border-0">
-            <h2 class="display-4">Rock out!</h2> 
-            <p class="lead">Enjoy a look at some of our favorite bands right now and their live performances!</p> 
+            <h2 class="display-4">Rock out!</h2>
+            <p class="lead">Enjoy a look at some of our favorite bands right now and their live performances!</p>
         </div>
 
         <!-- carousel body with padding and rounded corners -->
@@ -25,7 +25,7 @@ require "nav.php";
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                
+
                 <div class="carousel-inner rounded">
                     <div class="carousel-item active">
                         <img src="images/nirvana1.jpg" class="d-block w-100 carousel-image" alt="Nirvana">
@@ -37,7 +37,7 @@ require "nav.php";
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="images/qotsa1.jpg" class="d-block w-100 carousel-image" alt="Qotsa">
+                        <img src="images/qotsa2.jpg" class="d-block w-100 carousel-image" alt="Qotsa">
                         <div class="carousel-caption d-none d-md-block">
                             <div class="text-container">
                                 <h3>Queens of the Stone Age</h3>
@@ -55,7 +55,7 @@ require "nav.php";
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- controls for carousel -->
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
