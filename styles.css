@@ -1,64 +1,177 @@
+.side-container {
+  position: absolute;
+  top: 150px;
+  bottom: 0px;
+  width: 200px;
+  z-index: 1;
+}
 
-/* Global background color */
-html, body {
+.left-side {
+  left: 50px;
+}
+
+.right-side {
+  right: 50px;
+}
+
+.side-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 15px;
+}
+
+.about-page {
+  margin-left: 220px;
+  margin-right: 220px;
+  z-index: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .side-container {
+    display: none;
+  }
+  .about-page {
+    margin: 50px auto;
+  }
+}
+
+.about-page {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  color: #333;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  margin-bottom: 40px;
+}
+
+.about-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #dfdfdf;
+}
+
+.about-section h3 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 16px;
+  color: #555;
+}
+
+.about-cta {
+  margin-top: 30px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-cta h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.about-cta p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 12px 20px;
+  color: #fff;
+  background-color: dodgerblue;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #1a75ff;
+  transform: scale(1.05);
+}
+
+html,
+body {
   min-height: 100vh;
   background-color: #dfdfdf;
   margin: 0;
   padding: 0;
 }
 
-/* Larger height for the carousel container */
 .carousel-image {
-  max-height: 600px; /* Set fixed height */
-  object-fit: cover; /* Ensures image fills the container */
+  max-height: 600px;
+  object-fit: cover;
   width: 100%;
 }
 
-/* Styling for the carousel card container */
 .card {
   border: none;
-  border-radius: 80px; /* Rounded edges */
-}
-.carousel-inner {
-  border-radius: 80px; /* Carousel images rounded */
+  border-radius: 80px;
 }
 
-/* Center and style the card */
+.carousel-inner {
+  border-radius: 80px;
+}
+
 .container {
   display: flex;
   justify-content: center;
 }
 
 .carousel-caption {
-  position: absolute; /* Position caption absolutely */
-  bottom: 20px; /* Distance from the bottom */
-  left: 50%; /* Center caption */
-  transform: translateX(-50%); /* Center caption */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .text-container {
-  background-color: rgba(128, 128, 128, 0.7); /* Translucent gray background */
-  padding: 15px; /* Padding for spacing */
-  border-radius: 10px; /* Rounded corners */
-  color: white; /* Text color */
-  text-align: center; /* Center text */
+  background-color: rgba(128, 128, 128, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
 }
 
-/* start of header */
-
-/* Style the header with a dark background and some padding */
 .header {
   overflow: hidden;
-  background-color: #333; /* Dark background color */
+  background-color: #333;
   padding: 20px 10px;
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space between logo and nav links */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Style the header links */
 .header a {
-  color: white; /* Change text color to white */
+  color: white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -67,45 +180,38 @@ html, body {
   border-radius: 4px;
 }
 
-/* Style for the open sidenav button */
 .open-sidenav {
-  font-size: 18px; /* Match the font size with header links */
+  font-size: 18px;
   cursor: pointer;
-  color: white; /* Change the color to match your header */
-  padding: 12px; /* Add padding for better spacing */
-  margin-right: 20px; /* Add space between the button and logo */
+  color: white;
+  padding: 12px;
+  margin-right: 20px;
 }
 
-/* Optionally, you can add hover effect */
 .open-sidenav:hover {
-  background-color: #575757; /* Darker shade on hover */
-  color: white; /* Ensure text remains white */
+  background-color: #575757;
+  color: white;
 }
 
-/* Style the logo link */
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
 }
 
-/* Change the background color on mouse-over */
 .header a:hover {
-  background-color: #575757; /* Darker shade on hover */
-  color: white; /* Ensure text remains white */
+  background-color: #575757;
+  color: white;
 }
 
-/* Style the active/current link */
 .header a.active {
-  background-color: dodgerblue; /* Keep active link color */
-  color: white; /* Ensure text remains white */
+  background-color: dodgerblue;
+  color: white;
 }
 
-/* Align links horizontally */
 .header-right {
-  display: flex; /* Align links horizontally */
+  display: flex;
 }
 
-/* Add media queries for responsiveness */
 @media screen and (max-width: 500px) {
   .header a {
     display: block;
@@ -113,25 +219,19 @@ html, body {
   }
 }
 
-/* end of header */
-
-/* start of sidenav */
-
-/* The side navigation menu */
 .sidenav {
-  height: 100%; /* Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-  background-color: #333; /* Dark background */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* Transition effect to slide in the sidenav */
+  background-color: #333;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
 }
 
-/* The navigation menu links */
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -141,12 +241,10 @@ html, body {
   transition: 0.3s;
 }
 
-/* Change color on mouse over */
 .sidenav a:hover {
   color: #f1f1f1;
 }
 
-/* Close button style */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -155,35 +253,32 @@ html, body {
   margin-left: 50px;
 }
 
-/* Style page content to push to the right when the sidenav is open */
 #main {
-  transition: margin-left .5s;
+  transition: margin-left 0.5s;
   padding: 20px;
 }
 
-/* Responsive styles */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
-
-/* end of sidenav */
-
-/* start of footer */
 
 .footer {
   overflow: hidden;
-  background-color: #333; /* Dark background color */
+  background-color: #333;
   padding: 20px 10px;
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  gap: 15px; /* Add spacing between links */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Style the footer links */
 .footer a {
-  color: white; /* Change text color to white */
+  color: white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -192,25 +287,21 @@ html, body {
   border-radius: 4px;
 }
 
-/* Style the logo link */
 .footer a.logo {
   font-size: 25px;
   font-weight: bold;
 }
 
-/* Change the background color on mouse-over */
 .footer a:hover {
-  background-color: #575757; /* Darker shade on hover */
-  color: white; /* Ensure text remains white */
+  background-color: #575757;
+  color: white;
 }
 
-/* Style the active/current link */
 .footer a.active {
-  background-color: dodgerblue; /* Active link color */
-  color: white; /* Ensure text remains white */
+  background-color: dodgerblue;
+  color: white;
 }
 
-/* Add media queries for responsiveness */
 @media screen and (max-width: 500px) {
   .footer a {
     display: block;
@@ -218,21 +309,15 @@ html, body {
   }
 }
 
-/* end of footer */
-
-/* start of footer-bottom */
-
 .footer-bottom {
   overflow: hidden;
-  background-color: #333; /* Dark background color */
+  background-color: #333;
   padding: 1px 1px;
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
- 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Add media queries for responsiveness */
 @media screen and (max-width: 500px) {
   .footer-bottom a {
     display: block;
@@ -244,11 +329,6 @@ html, body {
   color: white;
 }
 
-/* end of footer-bottom */
-
-/* start of login */
-
-/* New container styling to replace body styling */
 .container {
   display: flex;
   justify-content: center;
@@ -257,161 +337,114 @@ html, body {
   background: #dfdfdf;
 }
 
-/* Original login-box and other styling */
 .login-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 440px;
-    height: 480px;
-    padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 440px;
+  height: 480px;
+  padding: 30px;
 }
 
 .login-header {
-    text-align: center;
-    margin: 20px 0 40px 0;
+  text-align: center;
+  margin: 20px 0 40px 0;
 }
 
 .login-header header {
-    color: #333;
-    font-size: 30px;
-    font-weight: 600;
+  color: #333;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .input-box .input-field {
-    width: 90%;
-    height: 60px;
-    font-size: 17px;
-    padding: 0 25px;
-    margin-bottom: 15px;
-    border-radius: 30px;
-    border: none;
-    box-shadow: 0px 5px 10px 1px rgba(0,0,0, 0.05);
-    outline: none;
-    transition: .3s;
+  width: 90%;
+  height: 60px;
+  font-size: 17px;
+  padding: 0 25px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+  outline: none;
+  transition: 0.3s;
 }
 
 ::placeholder {
-    font-weight: 500;
-    color: #222;
+  font-weight: 500;
+  color: #222;
 }
 
 .input-field:focus {
-    width: 105%;
+  width: 105%;
 }
 
 .forgot {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 section {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
 }
 
 #check {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 section a {
-    color: #555;
+  color: #555;
 }
 
 .input-submit {
-    position: relative;
-}
-
-.submit-btn {
-    width: 100%;
-    height: 60px;
-    background: #222;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.input-submit label {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    color: #fff;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-}
-
-.submit-btn:hover {
-    background: #000;
-    transform: scale(1.05,1);
-}
-
-.sign-up-link {
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.sign-up-link a {
-    color: #000;
-    font-weight: 600;
-}
-
-/* end of login css */
-
-/* index slideshow */
-
-/* styles.css */
-.mySlides {
-  display: none; /* Hide all slides by default */
-}
-
-.w3-display-container {
   position: relative;
 }
 
-.w3-center {
-  text-align: center;
+.submit-btn {
+  width: 100%;
+  height: 60px;
+  background: #222;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.w3-display-bottommiddle {
+.input-submit label {
   position: absolute;
-  bottom: 0;
+  top: 45%;
   left: 50%;
-  transform: translateX(-50%);
-  padding: 32px;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
-.w3-text-white {
-  color: white;
+.submit-btn:hover {
+  background: #000;
+  transform: scale(1.05, 1);
 }
 
-.w3-hide-small {
-  display: block; /* Change this if you have media queries to hide on small screens */
+.sign-up-link {
+  text-align: center;
+  font-size: 15px;
 }
 
-/* Set the image dimensions */
-.w3-display-container img {
-  width: 100%; /* Full width of the container */
-  height: 800px; /* Set a fixed height */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+.sign-up-link a {
+  font-weight: 600;
 }
 
-
-/* end of index slideshow */
-
-
-
-
-
+.sign-up-link a:hover {
+  color: #000;
+}
