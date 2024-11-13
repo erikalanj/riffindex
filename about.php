@@ -5,9 +5,8 @@ require "nav.php";
 
 <!-- Left Side Image Container -->
 <div class="side-container left-side">
-  <img src="image1.jpg" alt="Rock Band 1">
-  <img src="image2.jpg" alt="Rock Band 2">
-  <img src="image3.jpg" alt="Rock Band 3">
+  <img src="images/aboutimg2.jgp.jpg" alt="Rock Band 2">
+  <img src="images/abuotimg3.jpg" alt="Rock Band 3">
 </div>
 
 <!-- About Page Main Content -->
@@ -43,9 +42,8 @@ require "nav.php";
 
 <!-- Right Side Image Container -->
 <div class="side-container right-side">
-  <img src="image4.jpg" alt="Rock Concert 1">
-  <img src="image5.jpg" alt="Rock Concert 2">
-  <img src="image6.jpg" alt="Rock Concert 3">
+  <img src="images/aboutimg4.jpg" alt="Rock Concert 1">
+  <img src="images/aboutimg1.jpg" alt="Rock Band 1">
 </div>
 
 <?php
