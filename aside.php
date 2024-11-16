@@ -1,13 +1,12 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-
-
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="/w3images/avatar_g.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>My Name</b></h4>
-      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+<div class="row">
+        <div class="col-3 col-s-12">
+            <div class="aside">
+                <h2>What?</h2>
+                <p>Chania is a city on the island of Crete.</p>
+                <h2>Where?</h2>
+                <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                <h2>How?</h2>
+                <p>You can reach Chania airport from all over Europe.</p>
+            </div>
+        </div>
     </div>
-  </div><hr>

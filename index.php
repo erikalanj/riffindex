@@ -70,6 +70,22 @@ require "nav.php";
     </div>
 </main>
 
+<!-- The Band Section -->
+<div class="band-section-wrapper">
+    <div class="w3-container w3-content w3-center w3-padding-64 band-section" id="band">
+        <h2 class="w3-wide text-center">RiffIndex</h2>
+        <p class="w3-opacity text-center"><i>Your Gateway to Alterative Music</i></p>
+        <div class="paragraph-container">
+        Discover a haven for alternative music lovers! At RiffIndex, we bring together a passionate community of listeners who thrive on the raw energy of grunge, indie, and alternative rock. Dive into our vast database of music, explore tabs for your favorite songs, read in-depth reviews, and stay up-to-date with the latest in the alternative scene. Whether you're here to find your next obsession or relive classics, RiffIndex is your ultimate music companion.
+        </p>
+        <?php require "aside.php"; ?>
+    </div>
+
+</div>
+
+
+
+
 <?php require "foot.php"; ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

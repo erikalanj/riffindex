@@ -446,5 +446,57 @@ section a {
 }
 
 .sign-up-link a:hover {
-  color: #000;
+  color: white;
 }
+
+/* end of signup  */
+
+/* start of info under caro */
+
+/* Wrapper to center the entire section */
+.band-section-wrapper {
+  margin: 50px auto; /* Center the section on the page */
+  background-color: #dfdfdf;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Narrow the paragraph width */
+.paragraph-container {
+  max-width: 700px; /* Limit paragraph width */
+  margin: 0 auto; /* Center the container */
+  text-align: center; /* Center the text */
+  line-height: 1.6; /* Improve readability */
+}
+
+
+/* end of info under caro */
+
+/* aside */
+
+/* CSS for the Aside Section */
+.aside {
+  background-color: grey;
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px; /* Adds rounded corners */
+  margin: 20px;
+  position: fixed; /* Fixes the position relative to the viewport */
+  right: 0; /* Moves the aside to the right edge of the screen */
+  top: 100px; /* Adjusts the vertical position from the top */
+  width: 150px; /* You can adjust the width as needed */
+}
+
+/* Flexbox layout for .row (no change needed here) */
+.row {
+  display: flex;
+  justify-content: flex-end; /* Aligns children (including aside) to the right */
+}
+
+
+
+
