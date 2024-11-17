@@ -80,8 +80,39 @@ require "nav.php";
         </p>
         <?php require "aside.php"; ?>
     </div>
-
 </div>
+</div>
+
+<!-- The Contact Section -->
+
+
+<!-- The Contact Section -->
+<div class="w3-container w3-content" id="contact">
+  <h2 class="w3-wide w3-center">CONTACT</h2>
+
+  <div class="w3-row w3-padding-32">
+    <div class="w3-col m6 w3-large w3-margin-bottom">
+      <i class="fa fa-map-marker"></i> New Britain, CT<br>
+      <i class="fa fa-phone"></i> Phone: ---- --- ---<br>
+      <i class="fa fa-envelope"></i> Email: riffindex@gmail.com<br>
+    </div>
+    <div class="w3-col m6">
+      <form action="send_email.php" method="POST">
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" aria-label="Your Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email" aria-label="Your Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" aria-label="Your Message">
+        <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 
 
 
