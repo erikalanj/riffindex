@@ -8,4 +8,4 @@ TaskList for Project:
    Admin can see/edit the users table, admin can edit the bands table (users can see bands, but not other users)
 5. Ensure prepared statements to prevent SQL injection, etc. 
 6. Fix frontend stuff (change hamburger, ensure consistent styles)
-7. Add reviews (if time)
+7. Add reviews (if time), fix email thing (if time)
