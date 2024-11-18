@@ -1,24 +1,26 @@
 <?php
+require "top.php";
 // band_database.php
 
 // include database connection
 include 'db_connect.php';
 
 // fetch band data from the database
-$sql = "SELECT * FROM bands"; 
+$sql = "SELECT * FROM bands";
 
 try {
-    $stmt = $conn->prepare($sql); 
-    $stmt->execute(); 
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // fetch all results as an associative array
 } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage(); 
+    echo "Error: " . $e->getMessage();
 }
 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +28,7 @@ try {
     <!--need to add other style sheet to make database look more seamless-->
     <title>Band Database</title>
 </head>
+
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Band Database</h1>
@@ -76,4 +79,5 @@ try {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
