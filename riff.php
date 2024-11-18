@@ -29,36 +29,36 @@ require "nav.php";
             </div>
         </form>
 
-        <
-            <?php
-            if (isset($_GET['query'])) {
 
-                $searchQuery = $_GET['query'];
+        <?php
+        if (isset($_GET['query'])) {
 
-                //tokenize query so it will be understandable in the url
-                $formattedQuery = urlencode($searchQuery);
+            $searchQuery = $_GET['query'];
 
-                //concatenate the url with the query
-                $url = "https://www.ultimate-guitar.com/search.php?search_type=title&value=" . $formattedQuery;
+            //tokenize query so it will be understandable in the url
+            $formattedQuery = urlencode($searchQuery);
 
-                //go to url!!!!
-                header("Location: " . $url);
-                exit();
-            }
-            ?>
-            </div>
+            //concatenate the url with the query
+            $url = "https://www.ultimate-guitar.com/search.php?search_type=title&value=" . $formattedQuery;
 
-            <style>
-                body {
-                    padding-top: 60px;
-                }
+            //go to url!!!!
+            header("Location: " . $url);
+            exit();
+        }
+        ?>
+    </div>
 
-                .table-container {
-                    margin-top: 60px;
-                }
-            </style>
+    <style>
+        body {
+            padding-top: 60px;
+        }
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        .table-container {
+            margin-top: 60px;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
