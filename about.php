@@ -1,13 +1,14 @@
 <?php
 require "top.php";
 require "nav.php";
+
 ?>
 
 <!-- Left Side Image Container -->
 <div class="side-container left-side">
-  <img src="image1.jpg" alt="Rock Band 1">
-  <img src="image2.jpg" alt="Rock Band 2">
-  <img src="image3.jpg" alt="Rock Band 3">
+  <img src="images/aboutimg1.jpg" alt="Rock Band 1">
+  <img src="images/aboutimg2.jgp.jpg" alt="Rock Band 2">
+
 </div>
 
 <!-- About Page Main Content -->
@@ -37,15 +38,15 @@ require "nav.php";
   <div class="about-cta">
     <h3>Ready to rock? Join us at RiffIndex!</h3>
     <p>Whether you're here to learn, listen, or just love rock ‘n’ roll, we’re here to keep the spirit of rock alive!</p>
-    <a href="/join" class="cta-button">Join the Rock Community</a>
+    <a href="signup.php" class="cta-button">Join the Rock Community</a>
   </div>
 </div>
 
 <!-- Right Side Image Container -->
 <div class="side-container right-side">
-  <img src="image4.jpg" alt="Rock Concert 1">
-  <img src="image5.jpg" alt="Rock Concert 2">
-  <img src="image6.jpg" alt="Rock Concert 3">
+  <img src="images/aboutimg4.jpg" alt="Rock Concert 1">
+  <img src="images/aboutimg5.jpg" alt="Rock Concert 2">
+
 </div>
 
 <?php
