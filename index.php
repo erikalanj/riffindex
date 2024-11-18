@@ -55,7 +55,6 @@ require "nav.php";
                         </div>
                     </div>
                 </div>
-
                 <!-- controls for carousel -->
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -70,10 +69,19 @@ require "nav.php";
     </div>
 </main>
 
+<!-- The Band Section -->
+<div class="band-container band-content band-center band-padding-64" id="band">
+    <h2 class="band-wide">RIFFINDEX</h2>
+    <p class="band-opacity"><i>Your Gateway to Rock and Alternative Music</i></p>
+    <p class="band-justify">
+    Welcome to RiffIndex, the ultimate destination for rock and alternative music lovers. Explore our comprehensive rock database filled with classic anthems and modern hits, and discover the tabs to your favorite songs. Whether you're a seasoned musician or simply passionate about the genre, RiffIndex offers the tools and resources to deepen your connection to the music that moves you. From timeless riffs to cutting-edge tracks, RiffIndex is your go-to platform for diving into the world of rock. Start exploring and let the music inspire you.
+    </p>
+</div>
 
 
-<!-- The Contact Section -->
 
+
+  
 
 <!-- The Contact Section -->
 <div class="w3-container w3-content" id="contact">

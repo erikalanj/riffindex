@@ -452,11 +452,6 @@ section a {
 /* end of signup  */
 
 
-
-
-
-
-
 /* contact */
 
 /* General container styling */
@@ -566,5 +561,46 @@ section a {
   float: right;
 }
 
+
+/* CSS for logo image */
+.logo-img {
+  height: 50px; /* Adjust the size as needed */
+  width: auto;  /* Maintains aspect ratio */
+}
+
+/* this is under the riffindex info of index */
+
+.band-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.band-content {
+  text-align: center;
+}
+
+.band-center {
+  margin: auto;
+}
+
+.band-padding-64 {
+  padding: 64px;
+}
+
+.band-wide {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.band-opacity {
+  opacity: 0.75;
+}
+
+.band-justify {
+  text-align: justify;
+  margin: 20px 0;
+}
+
+/* something */
 
 
