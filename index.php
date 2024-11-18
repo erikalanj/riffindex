@@ -78,7 +78,7 @@ require "nav.php";
         <div class="paragraph-container">
         Discover a haven for alternative music lovers! At RiffIndex, we bring together a passionate community of listeners who thrive on the raw energy of grunge, indie, and alternative rock. Dive into our vast database of music, explore tabs for your favorite songs, read in-depth reviews, and stay up-to-date with the latest in the alternative scene. Whether you're here to find your next obsession or relive classics, RiffIndex is your ultimate music companion.
         </p>
-        <?php require "aside.php"; ?>
+        
     </div>
 </div>
 </div>
