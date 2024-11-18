@@ -36,7 +36,7 @@ require "nav.php";
   <div class="about-cta">
     <h3>Ready to rock? Join us at RiffIndex!</h3>
     <p>Whether you're here to learn, listen, or just love rock ‘n’ roll, we’re here to keep the spirit of rock alive!</p>
-    <a href="/join" class="cta-button">Join the Rock Community</a>
+    <a href="signup.php" class="cta-button">Join the Rock Community</a>
   </div>
 </div>
 
