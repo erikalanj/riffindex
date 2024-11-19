@@ -415,24 +415,25 @@ section a {
 .submit-btn {
   width: 100%;
   height: 60px;
-  background: #222;
+  background: black;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s;
+  color: white;
 }
 
 .input-submit label {
   position: absolute;
   top: 45%;
   left: 50%;
-  color: #fff;
+  color: black;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
 
 .submit-btn:hover {
-  background: #000;
+  background: black;
   transform: scale(1.05, 1);
 }
 
@@ -603,4 +604,69 @@ section a {
 
 /* something */
 
+/* Tour Section Styles */
+#tour {
+  background-color: #000;
+}
 
+.w3-container {
+  max-width: 800px;
+  padding: 64px;
+}
+
+.w3-wide {
+  font-size: 2em;
+}
+
+.w3-center {
+  text-align: center;
+}
+
+.w3-opacity {
+  opacity: 0.7;
+}
+
+/* Center the images and album cards */
+.w3-row-padding {
+  display: flex;
+  justify-content: center;
+  gap: 32px; /* Space between cards */
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.album-image {
+  width: 200px; /* Fixed size for all images */
+  height: 200px; /* Fixed size for all images */
+  object-fit: cover; /* Ensures the image covers the entire space without distortion */
+  transition: opacity 0.3s ease;
+}
+
+.album-image:hover {
+  opacity: 0.8;
+}
+
+.w3-container.w3-white {
+  background-color: transparent;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Links Styling */
+.w3-button.w3-black {
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.w3-button.w3-black:hover {
+  background-color: #444;
+}
