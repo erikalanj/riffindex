@@ -62,6 +62,3 @@ require "nav.php";
 </body>
 
 </html>
-<?php
-require "foot.php";
-?>

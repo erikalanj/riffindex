@@ -1,9 +1,9 @@
 TaskList for Project:
-1. Add logo, extra text/info under carousel
+1. Add logo, extra text/info under carousel (DONE)
 3. Add photo in signup
 2. Session authentication using cookies
    If user is not logged in and tries to access any other page, require them to go to sign up page
-3. Create users table with CRUD and photo of user uploaded in signup, add CRUD to band table
+3. Create users table with CRUD and photo of user uploaded in signup, add CRUD to band table 
 4. Admin Privileges
    Admin can see/edit the users table, admin can edit the bands table (users can see bands, but not other users)
 5. Ensure prepared statements to prevent SQL injection, etc. 

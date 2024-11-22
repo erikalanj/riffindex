@@ -8,74 +8,74 @@ require "nav.php";
 
 <!-- main container -->
 <main class="container my-5 d-flex justify-content-center">
-    <!-- carousel card container with text on top -->
-    <div class="card shadow-lg rounded-lg" style="max-width: 1000px;">
-        <!-- description section on top -->
-        <div class="card-header text-center bg-white border-0">
-            <h2 class="display-4">Rock out!</h2>
-            <p class="lead">Enjoy a look at some of our favorite bands right now and their live performances!</p>
-        </div>
-
-        <!-- carousel body with padding and rounded corners -->
-        <div class="card-body p-0">
-            <!-- carousel component -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner rounded">
-                    <div class="carousel-item active">
-                        <img src="images/nirvana1.jpg" class="d-block w-100 carousel-image" alt="Nirvana">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div class="text-container">
-                                <h3>Nirvana</h3>
-                                <p>Debatably the Best Grunge Band of the 90's!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/qotsa2.jpg" class="d-block w-100 carousel-image" alt="Qotsa">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div class="text-container">
-                                <h3>Queens of the Stone Age</h3>
-                                <p>QOTSA touring for their newest 2023 album, "In Times New Roman..."!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/stokes1.jpg" class="d-block w-100 carousel-image" alt="strokes">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div class="text-container">
-                                <h3>The Strokes</h3>
-                                <p>The Famous 2 Dollar MTV Strokes Performance which Revived Garage Rock in the Early 2000's!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- controls for carousel -->
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
+  <!-- carousel card container with text on top -->
+  <div class="card shadow-lg rounded-lg" style="max-width: 1000px;">
+    <!-- description section on top -->
+    <div class="card-header text-center bg-white border-0">
+      <h2 class="display-4">Rock out!</h2>
+      <p class="lead">Enjoy a look at some of our favorite bands right now and their live performances!</p>
     </div>
+
+    <!-- carousel body with padding and rounded corners -->
+    <div class="card-body p-0">
+      <!-- carousel component -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="images/nirvana1.jpg" class="d-block w-100 carousel-image" alt="Nirvana">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="text-container">
+                <h3>Nirvana</h3>
+                <p>Debatably the Best Grunge Band of the 90's!</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/qotsa2.jpg" class="d-block w-100 carousel-image" alt="Qotsa">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="text-container">
+                <h3>Queens of the Stone Age</h3>
+                <p>QOTSA touring for their newest 2023 album, "In Times New Roman..."!</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/stokes1.jpg" class="d-block w-100 carousel-image" alt="strokes">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="text-container">
+                <h3>The Strokes</h3>
+                <p>The Famous 2 Dollar MTV Strokes Performance which Revived Garage Rock in the Early 2000's!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- controls for carousel -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
 </main>
 
 <!-- The Band Section -->
 <div class="band-container band-content band-center band-padding-64" id="band">
-    <h2 class="band-wide">RIFFINDEX</h2>
-    <p class="band-opacity"><i>Your Gateway to Rock and Alternative Music</i></p>
-    <p class="band-justify">
+  <h2 class="band-wide">RIFFINDEX</h2>
+  <p class="band-opacity"><i>Your Gateway to Rock and Alternative Music</i></p>
+  <p class="band-justify">
     Welcome to RiffIndex, the ultimate destination for rock and alternative music lovers. Explore our comprehensive rock database filled with classic anthems and modern hits, and discover the tabs to your favorite songs. Whether you're a seasoned musician or simply passionate about the genre, RiffIndex offers the tools and resources to deepen your connection to the music that moves you. From timeless riffs to cutting-edge tracks, RiffIndex is your go-to platform for diving into the world of rock. Start exploring and let the music inspire you.
-    </p>
+  </p>
 </div>
 
 <!-- The Tour Section -->
@@ -103,7 +103,7 @@ require "nav.php";
           <p class="w3-opacity">Tinkertown - American Gothic</p>
           <p>Americana | Indie Rock</p>
           <p>Tinkertown’s American Gothic is a portrait of life and love, painted with the many colors of rock n’ roll for a sound that’s heartfelt, adventurous, and most importantly, unafraid.</p>
-          <a href="https://www.newreleasesnow.com/album/tinkertown-american-gothic">READ MORE</a>
+          <a href="https://www.newreleasesnow.com/album/tinkertown-american-gothic" target="_blank" class="w3-button w3-black w3-margin-bottom">READ MORE</a>
         </div>
       </div>
 
@@ -113,7 +113,7 @@ require "nav.php";
           <p class="w3-opacity">Linkin Park - From Zero</p>
           <p>Alt Metal | Alternative</p>
           <p>With new singer Emily Armstrong, Linkin Park is a band reborn on From Zero, the beginning of a new era but still rooted in old bonds.</p>
-          <a href="https://www.newreleasesnow.com/album/linkin-park-from-zero">READ MORE</a>
+          <a href="https://www.newreleasesnow.com/album/linkin-park-from-zero" target="_blank" class="w3-button w3-black w3-margin-bottom">READ MORE</a>
         </div>
       </div>
     </div>
@@ -121,9 +121,9 @@ require "nav.php";
 </div>
 
 
- 
 
-  
+
+
 
 <!-- The Contact Section -->
 <div class="w3-container w3-content" id="contact">

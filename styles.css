@@ -452,7 +452,6 @@ section a {
 
 /* end of signup  */
 
-
 /* contact */
 
 /* General container styling */
@@ -512,7 +511,9 @@ section a {
   margin-right: 8px;
 }
 
-.fa-map-marker, .fa-phone, .fa-envelope {
+.fa-map-marker,
+.fa-phone,
+.fa-envelope {
   width: 30px;
 }
 
@@ -562,11 +563,10 @@ section a {
   float: right;
 }
 
-
 /* CSS for logo image */
 .logo-img {
   height: 50px; /* Adjust the size as needed */
-  width: auto;  /* Maintains aspect ratio */
+  width: auto; /* Maintains aspect ratio */
 }
 
 /* this is under the riffindex info of index */
