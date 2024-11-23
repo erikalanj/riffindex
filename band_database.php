@@ -43,9 +43,9 @@ $bands = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo htmlspecialchars($band['genre']); ?></td>
                         <td><?php echo htmlspecialchars($band['activity_status']); ?></td>
                         <td class="band-actions">
-                            <a href="view_band.php?id=<?php echo $band['id']; ?>"><button class="btn btn-info">View</button></a>
-                            <a href="edit_band.php?id=<?php echo $band['id']; ?>"><button class="btn btn-warning">Edit</button></a>
-                            <a href="delete_band.php?id=<?php echo $band['id']; ?>"><button class="btn btn-danger">Delete</button></a>
+                            <a href="view_band.php?id=<?php echo $band['id']; ?>" class="btn btn-info btn-sm">View</a>
+                            <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

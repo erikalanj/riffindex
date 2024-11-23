@@ -2,7 +2,6 @@
 require "top.php"; // Includes the top section (head, opening body tag)
 require "nav.php"; // Includes the navigation bar
 
-
 // Database connection
 require "db_connect.php"; // Adjust to your actual database connection file
 
@@ -18,12 +17,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = trim($_POST['confirm_password']);
     $phone = htmlspecialchars(trim($_POST['phone'])); // New phone number field
 
+    // Image upload
+    $image = $_FILES['image'];
+    $image_path = '';
+
     // Check if the passwords match
     if ($password !== $confirm_password) {
-        $error = "Passwords do not match."; // Set error message
+        $error = "Passwords do not match.";
+    } elseif ($image['error'] === UPLOAD_ERR_OK) {
+        // Handle image upload
+        $target_dir = "uploads/"; // Directory to store images
+        $image_name = basename($image['name']);
+        $image_path = $target_dir . uniqid() . "_" . $image_name; // Create unique file name
+
+        // Ensure the uploads directory exists
+        if (!file_exists($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
+
+        // Move uploaded file to the target directory
+        if (!move_uploaded_file($image['tmp_name'], $image_path)) {
+            $error = "Failed to upload image.";
+        }
     } else {
+        $error = "Please upload a valid image.";
+    }
+
+    if (empty($error)) {
         // Hash password
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT); // Hash password
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $role = 'casual'; // Default role for new users
 
         // Check if email already exists
@@ -32,14 +54,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $existing_user = $stmt->fetch();
 
         if ($existing_user) {
-            $error = "Email is already registered."; // Set error message
+            $error = "Email is already registered.";
         } else {
             // Insert new user into the database
-            $stmt = $conn->prepare("INSERT INTO users (name, email, password, role, phone) VALUES (?, ?, ?, ?, ?)"); // Updated SQL query
-            if ($stmt->execute([$name, $email, $hashed_password, $role, $phone])) {
+            $stmt = $conn->prepare("INSERT INTO users (name, email, password, role, phone, image) VALUES (?, ?, ?, ?, ?, ?)");
+            if ($stmt->execute([$name, $email, $hashed_password, $role, $phone, $image_path])) {
                 // Redirect to login page after successful signup
                 header("Location: login.php");
                 exit();
+            } else {
+                $error = "Failed to register user.";
             }
         }
     }
@@ -59,8 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         <?php endif; ?>
 
-        <!-- Signup form with names matching the POST variables in PHP above -->
-        <form method="POST" action="">
+        <!-- Signup form -->
+        <form method="POST" action="" enctype="multipart/form-data">
             <div class="input-box">
                 <input type="text" name="name" class="input-field" placeholder="Full Name" autocomplete="off" required>
             </div>
@@ -74,8 +98,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" name="confirm_password" class="input-field" placeholder="Confirm Password" autocomplete="off" required>
             </div>
             <div class="input-box">
-                <input type="text" name="phone" class="input-field" placeholder="Phone Number" autocomplete="off" required> <!-- New phone input -->
+                <input type="text" name="phone" class="input-field" placeholder="Phone Number" autocomplete="off" required>
             </div>
+            <p>Submit your profile picture! (maybe favorite album cover?!): </p>
+            <div>
+                <input type="file" name="image" class="input-field" accept="image/*" required>
+            </div>
+            <br>
             <div class="forgot">
                 <section>
                     <input type="checkbox" id="check">
