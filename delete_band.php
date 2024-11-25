@@ -65,9 +65,6 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="modal-body">
                         Are you sure you want to delete the band "<?php echo htmlspecialchars($band['name']); ?>"?
-                        <p><strong>Genre:</strong> <?php echo htmlspecialchars($band['genre']); ?></p>
-                        <p><strong>Activity Status:</strong> <?php echo htmlspecialchars($band['activity_status']); ?></p>
-                        <p class="band-description"><strong>Description:</strong> <?php echo nl2br(htmlspecialchars($band['description'])); ?></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

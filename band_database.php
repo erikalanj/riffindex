@@ -24,13 +24,15 @@ $bands = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <div class="band-container">
-        <h1>Band Database</h1>
+        <h1>Band Database/<a href="user_database.php">User Database</a></h1>
 
         <!-- Table with Bootstrap's .table-striped class for alternating row colors -->
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Band Name</th>
+                    <th>Founded</th>
+                    <th>Members</th>
                     <th>Genre</th>
                     <th>Activity Status</th>
                     <th>Actions</th>
@@ -40,6 +42,8 @@ $bands = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach ($bands as $band): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($band['name']); ?></td>
+                        <td><?php echo htmlspecialchars($band['date_created']); ?></td>
+                        <td><?php echo htmlspecialchars($band['members']); ?></td>
                         <td><?php echo htmlspecialchars($band['genre']); ?></td>
                         <td><?php echo htmlspecialchars($band['activity_status']); ?></td>
                         <td class="band-actions">

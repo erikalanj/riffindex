@@ -24,7 +24,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <div class="band-container">
-        <h1>User Database</h1>
+        <h1><a href="band_database.php">Band Database</a>/User Database</h1>
 
         <!-- Table with consistent styling and functionality -->
         <table class="table table-striped">
