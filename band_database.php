@@ -14,7 +14,7 @@ $bands = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>a
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Band Database</title>
@@ -57,6 +57,9 @@ $bands = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <div class="text-center mt-4">
+            <a href="add_band.php" class="btn btn-success btn-lg">Add New Band</a>
+        </div>
     </div>
 
     <!-- Bootstrap JS (Optional if you want interactive components like modals) -->

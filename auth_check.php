@@ -1,5 +1,9 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+
 
 // Allow access to login.php and signup.php without a session
 $current_page = basename($_SERVER['PHP_SELF']);

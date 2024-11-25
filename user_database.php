@@ -64,6 +64,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <div class="text-center mt-4">
+            <a href="add_user.php" class="btn btn-success btn-lg">Add New User</a>
+        </div>
     </div>
 
     <!-- Bootstrap JS -->
