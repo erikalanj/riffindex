@@ -1,4 +1,6 @@
 <?php
+session_start();
+include('auth_check.php');
 require "top.php";
 require "nav.php";
 ?>

@@ -1,5 +1,7 @@
-<?php include('top.php'); ?>
 <?php
+session_start();
+include('top.php');
+include('auth_check.php');
 include 'db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

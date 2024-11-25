@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "top.php"; // Includes the top section (head, opening body tag)
 require "nav.php"; // Includes the navigation bar
 
@@ -70,6 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+
 <div class="container">
     <div class="login-box">
         <div class="login-header">
@@ -100,17 +105,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="input-box">
                 <input type="text" name="phone" class="input-field" placeholder="Phone Number" autocomplete="off" required>
             </div>
-            <p>Submit your profile picture! (maybe favorite album cover?!): </p>
+            <p>Submit your profile picture: </p>
             <div>
                 <input type="file" name="image" class="input-field" accept="image/*" required>
             </div>
+
             <br>
-            <div class="forgot">
-                <section>
-                    <input type="checkbox" id="check">
-                    <label for="check">Remember me</label>
-                </section>
-            </div>
+
             <div class="input-submit">
                 <button type="submit" class="submit-btn">Sign up</button>
             </div>

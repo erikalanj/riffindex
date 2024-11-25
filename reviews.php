@@ -1,6 +1,8 @@
 <?php
-require "top.php"; 
-require "nav.php"; 
+session_start();
+require "top.php";
+require "nav.php";
+include('auth_check.php');
 ?>
 
 

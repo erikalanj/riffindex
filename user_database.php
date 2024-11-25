@@ -1,6 +1,9 @@
-<?php include('top.php'); ?>
 <?php
+session_start();
+include('top.php');
 include 'db_connect.php';
+include('auth_check.php');
+
 
 // Fetch all users
 $sql = "SELECT * FROM users";

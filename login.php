@@ -1,41 +1,45 @@
 <?php
-require "top.php"; 
-require "nav.php"; 
+session_start();
 
+// Redirect logged-in users away from login.php
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    header("Location: index.php");
+    exit();
+}
 
+require "top.php";
+require "nav.php";
+require "db_connect.php";
 
-require "db_connect.php"; 
-
-
-$error = ""; //initialize error message
-
+$error = ""; // Initialize error message
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    //clean up email and password
+    // Clean up email and password
     $email = htmlspecialchars(trim($_POST['email']));
     $password = trim($_POST['password']);
 
-    //check if email exists
+    // Check if email exists
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
 
-    //check if username and password match
+    // Check if username and password match
     if ($user && password_verify($password, $user['password'])) {
-
-        session_start();
+        $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_role'] = $user['role'];
-        
-        header("Location: index.php"); //redirect to index after successful log in
+
+        header("Location: index.php"); // Redirect to index after successful login
         exit();
     } else {
-        $error = "Invalid email or password."; // error check
+        $error = "Invalid email or password."; // Error message
     }
 }
 ?>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 
 <div class="container">
     <div class="login-box">
@@ -43,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <header>Login</header>
         </div>
 
-        
+
         <?php if (!empty($error)): ?> <!--display error-->
             <div class="error-message" style="color: red;">
                 <?php echo $error; ?>
@@ -58,19 +62,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="input-box">
                 <input type="password" name="password" class="input-field" placeholder="Password" autocomplete="off" required>
             </div>
-            <div class="forgot">
-                <section>
-                    <input type="checkbox" id="check">
-                    <label for="check">Remember me</label>
-                </section>
-                <section>
-                    <a href="#">Forgot password</a>
-                </section>
-            </div>
+            <br>
             <div class="input-submit">
                 <button type="submit" class="submit-btn">Sign In</button>
             </div>
         </form>
+
+        <br>
 
         <div class="sign-up-link">
             <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
@@ -79,5 +77,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <?php
-require "foot.php"; 
+require "foot.php";
 ?>
