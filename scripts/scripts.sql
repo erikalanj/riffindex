@@ -9,7 +9,6 @@ CREATE TABLE users (
     role ENUM('member', 'admin') NOT NULL,
     phone VARCHAR(15),
     image VARCHAR(255),
-    image VARCHAR(255) DEFAULT NULL
 );
 
 CREATE TABLE bands (
