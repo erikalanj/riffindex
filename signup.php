@@ -7,7 +7,8 @@ require "nav.php"; // Includes the navigation bar
 require "db_connect.php"; // Adjust to your actual database connection file
 
 // Initialize error message variable
-$error = "";
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

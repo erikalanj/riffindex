@@ -1,13 +1,21 @@
 -- In phpMyAdmin, create a database called RiffIndex (matches hardcoded host in db_connect.php), 
 -- and then paste this script into the SQL window under the RiffIndex database.
 
-CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+-- Create the RiffIndex Database
+CREATE DATABASE IF NOT EXISTS RiffIndex;
+
+-- Use the RiffIndex Database
+USE RiffIndex;
+
+-- Create the Users Table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     role ENUM('member', 'admin') NOT NULL,
-    phone VARCHAR(15)
+    phone VARCHAR(15),
+    image VARCHAR(255) DEFAULT NULL -- Optional field for storing the image file path
 );
 
 CREATE TABLE bands (
