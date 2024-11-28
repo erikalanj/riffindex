@@ -7,8 +7,9 @@ CREATE TABLE users (
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     role ENUM('member', 'admin') NOT NULL,
-    phone VARCHAR(15)
-    image VARCHAR(255);
+    phone VARCHAR(15),
+    image VARCHAR(255),
+    image VARCHAR(255) DEFAULT NULL
 );
 
 CREATE TABLE bands (
