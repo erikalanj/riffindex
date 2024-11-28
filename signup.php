@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($error)) {
         // Hash password
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-        $role = 'casual'; // Default role for new users
+        $role = 'member'; // Default role for new users
 
         // Check if email already exists
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
