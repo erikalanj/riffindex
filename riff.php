@@ -17,8 +17,8 @@ include('auth_check.php');
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Search Guitar Tutorials</h2>
+    <div class="container">
+        <h2 class="text-center mb-4">Search Guitar Tutorials: </h2>
 
         <!-- Search Form -->
         <form class="mb-3" method="get" action="riff.php">
@@ -31,34 +31,23 @@ include('auth_check.php');
             </div>
         </form>
 
-
         <?php
         if (isset($_GET['query'])) {
-
             $searchQuery = $_GET['query'];
 
-            //tokenize query so it will be understandable in the url
+            // Tokenize query for Songsterr search URL
             $formattedQuery = urlencode($searchQuery);
 
-            //concatenate the url with the query
-            $url = "https://www.ultimate-guitar.com/search.php?search_type=title&value=" . $formattedQuery;
+            // Construct the Songsterr URL
+            $songsterrUrl = "https://www.songsterr.com/?pattern=" . $formattedQuery;
 
-            //go to url!!!!
-            header("Location: " . $url);
-            exit();
+            // Display the clickable link
+            echo '<div class="text-center">';
+            echo '<a href="' . $songsterrUrl . '" target="_blank" class="btn btn-success">Click Here for Tab!</a>';
+            echo '</div>';
         }
         ?>
     </div>
-
-    <style>
-        body {
-            padding-top: 60px;
-        }
-
-        .table-container {
-            margin-top: 60px;
-        }
-    </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>

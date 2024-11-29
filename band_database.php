@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('top.php');
+require('top.php');
 include('auth_check.php');
 include 'db_connect.php';
 
@@ -14,7 +14,7 @@ $bands = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>a
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Band Database</title>
@@ -63,7 +63,7 @@ $bands = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <!-- Bootstrap JS (Optional if you want interactive components like modals) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
 
 </body>
 

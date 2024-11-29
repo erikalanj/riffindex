@@ -97,3 +97,26 @@
   background-color: #1a75ff;
   transform: scale(1.05);
 }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 900; /* Ensure it's behind the header */
+  top: 0;
+  left: 0;
+  background-color: #333;
+  padding-top: 60px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.open-sidenav {
+  position: relative; /* Ensure it's within the header's context */
+  z-index: 1000; /* Matches the header z-index */
+}
+.sidenav {
+  z-index: 1000;
+}
+.open-sidenav {
+  z-index: 1100;
+}
