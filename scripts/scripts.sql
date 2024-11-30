@@ -18,7 +18,7 @@ CREATE TABLE bands (
     members TEXT NOT NULL,
     activity_status ENUM('active', 'inactive') NOT NULL,
     genre VARCHAR(100) NOT NULL,
-    description TEXT NOT NULL, 
+    description TEXT NOT NULL 
 );
 
 -- insert sample data including band descriptions
