@@ -2,10 +2,11 @@ TaskList for Project:
 1. Add logo, extra text/info under carousel (DONE)
 3. Add photo in signup (DONE)
 2. Session authentication using cookies (DONE)
-   If user is not logged in and tries to access any other page, require them to go to sign up page
+   If user is not logged in and tries to access any other page, require them to go to sign up page (DONE)
 3. Create users table with CRUD and photo of user uploaded in signup, add CRUD to band table (DONE)
-4. Admin Privileges
-   Admin can see/edit the users table, admin can edit the bands table (users can see bands, but not other users)
+4. Admin Privileges(DONE)
+   Admin can see/edit the users table, admin can edit the bands table (users can see bands, but not other users) (DONE)
 5. Ensure prepared statements to prevent SQL injection, etc. (DONE)
-6. Fix frontend stuff (change hamburger, ensure consistent styles)
-7. Add reviews (if time), fix email thing (if time)
+6. Fix frontend stuff (change hamburger, ensure consistent styles) (DONE)
+7. Add reviews (if time), fix email thing (if time) (NOT DONE)
+8. Diagram

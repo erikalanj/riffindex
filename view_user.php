@@ -19,6 +19,8 @@ if (isset($_GET['id'])) {
         exit;
     }
 }
+$user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +55,10 @@ if (isset($_GET['id'])) {
             </div>
         </div>
         <div class="about-cta">
-            <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="cta-button">Edit User</a>
+            <?php if ($user_role === 'admin'): ?>
+                <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="cta-button">Edit User</a>
+            <?php endif; ?>
+
             <a href="user_database.php" class="cta-button">Back to Database</a>
         </div>
     </div>
