@@ -3,6 +3,21 @@ session_start();
 require "top.php";
 require "nav.php";
 include('auth_check.php');
+
+// Handle the search query before outputting any HTML
+if (isset($_GET['query'])) {
+    $searchQuery = $_GET['query'];
+
+    // Tokenize query so it will be understandable in the URL
+    $formattedQuery = urlencode($searchQuery);
+
+    // Concatenate the URL with the query
+    $url = "https://www.ultimate-guitar.com/search.php?search_type=title&value=" . $formattedQuery;
+
+    // Redirect to the URL
+    header("Location: " . $url);
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +33,7 @@ include('auth_check.php');
 
 <body>
     <div class="container">
-        <h2 class="text-center mb-4">Search Guitar Tutorials: </h2>
+        <h2 class="text-center mb-4">Search Guitar Tutorials</h2>
 
         <!-- Search Form -->
         <form class="mb-3" method="get" action="riff.php">
@@ -30,24 +45,13 @@ include('auth_check.php');
                 </button>
             </div>
         </form>
-
-        <?php
-        if (isset($_GET['query'])) {
-            $searchQuery = $_GET['query'];
-
-            // Tokenize query for Songsterr search URL
-            $formattedQuery = urlencode($searchQuery);
-
-            // Construct the Songsterr URL
-            $songsterrUrl = "https://www.songsterr.com/?pattern=" . $formattedQuery;
-
-            // Display the clickable link
-            echo '<div class="text-center">';
-            echo '<a href="' . $songsterrUrl . '" target="_blank" class="btn btn-success">Click Here for Tab!</a>';
-            echo '</div>';
-        }
-        ?>
     </div>
+
+    <style>
+        .table-container {
+            margin-top: 60px;
+        }
+    </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>

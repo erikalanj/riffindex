@@ -26,8 +26,7 @@ $stmt->bindParam(':items_per_page', $items_per_page, PDO::PARAM_INT);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Get the user's role from the session
-$user_role = $_SESSION['role'] ?? 'member';
+$user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
 ?>
 
 <!DOCTYPE html>
@@ -76,14 +75,16 @@ $user_role = $_SESSION['role'] ?? 'member';
                         <td><?php echo htmlspecialchars($user['phone'] ?: 'N/A'); ?></td>
                         <td>
                             <a href="view_user.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">View</a>
-                            <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <?php if ($user_role === 'admin'): ?>
+
+                                <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
-
 
         <!-- Pagination -->
         <nav>
@@ -95,9 +96,6 @@ $user_role = $_SESSION['role'] ?? 'member';
                 <?php endfor; ?>
             </ul>
         </nav>
-        <div class="text-center mt-4">
-            <a href="add_user.php" class="btn btn-success btn-lg">Add New User</a>
-        </div>
     </div>
 
     <style>

@@ -71,14 +71,16 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
                         <td><?php echo htmlspecialchars($band['activity_status']); ?></td>
                         <td>
                             <a href="view_band.php?id=<?php echo $band['id']; ?>" class="btn btn-info btn-sm">View</a>
-                            <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <?php if ($user_role === 'admin'): ?>
+
+                                <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
-
 
         <!-- Pagination -->
         <nav>
@@ -90,9 +92,12 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
                 <?php endfor; ?>
             </ul>
         </nav>
-        <div class="text-center mt-4">
-            <a href="add_user.php" class="btn btn-success btn-lg">Add New User</a>
-        </div>
+
+        <?php if ($user_role === 'admin'): ?>
+            <div class="text-center mt-4">
+                <a href="add_band.php" class="btn btn-success btn-lg">Add New Band</a>
+            </div>
+        <?php endif; ?>
     </div>
 
     <style>
