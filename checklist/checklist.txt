@@ -10,3 +10,5 @@ TaskList for Project:
 6. Fix frontend stuff (change hamburger, ensure consistent styles) (DONE)
 7. Add reviews (if time), fix email thing (if time) (NOT DONE)
 8. Diagram
+9. Email Feature!!!!!!
+10. Try to figure out domain name!
