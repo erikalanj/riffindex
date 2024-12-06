@@ -109,3 +109,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
 </body>
 
 </html>
+
+<?php
+require "foot.php";
+?>

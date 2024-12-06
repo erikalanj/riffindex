@@ -88,3 +88,7 @@ if (isset($_GET['id'])) {
 </body>
 
 </html>
+
+<?php
+require "foot.php";
+?>
