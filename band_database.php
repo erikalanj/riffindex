@@ -72,8 +72,11 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
                         <td>
                             <a href="view_band.php?id=<?php echo $band['id']; ?>" class="btn btn-info btn-sm">View</a>
                             <?php if ($user_role === 'admin'): ?>
-
+                            <br>
+                            <br>
                                 <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <br>
+                                <br>
                                 <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                             <?php endif; ?>
                         </td>
@@ -111,3 +114,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
 </body>
 
 </html>
+
+<?php
+require "foot.php";
+?>
