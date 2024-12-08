@@ -124,35 +124,36 @@ require "nav.php";
 
 
 
-
-
-
 <!-- The Contact Section -->
-<div class="w3-container w3-content" id="contact">
+<div class="w3-container w3-content w3-padding-64" id="contact">
   <h2 class="w3-wide w3-center">CONTACT</h2>
-
+  <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
   <div class="w3-row w3-padding-32">
-    <div class="w3-col m6 w3-large w3-margin-bottom">
+    <div class="w3-col m6 w3-large w3-margin-bottom contact-info">
       <i class="fa fa-map-marker"></i> New Britain, CT<br>
-      <i class="fa fa-phone"></i> Phone: ---- --- ---<br>
-      <i class="fa fa-envelope"></i> Email: riffindex@gmail.com<br>
+      <i class="fa fa-phone"></i> Phone: +00 151515<br>
+      <i class="fa fa-envelope"></i> Email: RiffIndex@gmail.com<br>
     </div>
     <div class="w3-col m6">
-      <form action="send_email.php" method="POST">
-        <div class="w3-row-padding">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" aria-label="Your Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email" aria-label="Your Email">
-          </div>
+      <form action="/action_page.php" target="_blank">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Name" required name="Name">
         </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" aria-label="Your Message">
+        <div class="form-group">
+          <input class="form-control" type="email" placeholder="Email" required name="Email">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Message" required name="Message"></textarea>
+        </div>
         <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
       </form>
     </div>
   </div>
 </div>
+
+
+
+
 
 
 
