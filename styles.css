@@ -697,10 +697,15 @@ section a {
 }
 
 /* Contact Info Icons */
+.contact-info {
+  text-align: center; /* Centers the text and icons */
+  margin: 0 auto; /* Centers the container if it's a block element */
+  line-height: 1.8; /* Adjusts spacing between lines for better readability */
+}
+
 .contact-info i {
-  width: 30px;
-  display: inline-block;
-  text-align: center;
+  margin-right: 10px; /* Adds space between icons and text */
+  vertical-align: middle; /* Aligns icons with the text */
 }
 
 /* Button Styling */

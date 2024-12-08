@@ -133,6 +133,7 @@ require "nav.php";
       <i class="fa fa-phone"></i> Phone: +00 151515<br>
       <i class="fa fa-envelope"></i> Email: RiffIndex@gmail.com<br>
     </div>
+    <br>
     <div class="w3-col m6">
       <form action="/action_page.php" target="_blank">
         <div class="form-group">
