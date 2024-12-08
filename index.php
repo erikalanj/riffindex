@@ -121,8 +121,6 @@ require "nav.php";
 </div>
 
 
-
-
 <!-- The Contact Section -->
 <div class="w3-container w3-content w3-padding-64" id="contact">
   <h2 class="w3-wide w3-center">CONTACT</h2>
@@ -135,7 +133,8 @@ require "nav.php";
     </div>
     <br>
     <div class="w3-col m6">
-      <form action="/action_page.php" target="_blank">
+      <!-- Form that sends to send_email.php -->
+      <form action="send_email.php" method="post">
         <div class="form-group">
           <input class="form-control" type="text" placeholder="Name" required name="Name">
         </div>
@@ -150,11 +149,6 @@ require "nav.php";
     </div>
   </div>
 </div>
-
-
-
-
-
 
 
 
