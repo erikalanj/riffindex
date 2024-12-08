@@ -493,6 +493,13 @@ section a {
 /* Tour Section Styles */
 #tour {
   background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  text-align: center; /* Center text */
+  padding: 64px 20px; /* Add padding to avoid edge overlap */
 }
 
 .w3-container {
@@ -516,7 +523,9 @@ section a {
 .w3-row-padding {
   display: flex;
   justify-content: center;
-  gap: 32px; /* Space between cards */
+  align-items: flex-start; /* Align the top of album cards */
+  gap: 32px; /* Space between the cards */
+  flex-wrap: wrap; /* Wrap content for smaller screens */
 }
 
 .album-card {
@@ -524,14 +533,14 @@ section a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
+  max-width: 300px; /* Prevent cards from being too wide */
 }
 
 .album-image {
-  width: 200px; /* Fixed size for all images */
-  height: 200px; /* Fixed size for all images */
-  object-fit: cover; /* Ensures the image covers the entire space without distortion */
-  transition: opacity 0.3s ease;
+  width: 100%;
+  max-width: 250px; /* Ensure images fit within the card */
+  height: 250px;
+  object-fit: cover; /* Maintain aspect ratio while filling the space */
 }
 
 .album-image:hover {

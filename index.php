@@ -82,13 +82,13 @@ require "nav.php";
 
 <!-- The Tour Section -->
 <div class="w3-black" id="tour">
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+  <div class="w3-container">
     <h2 class="w3-wide w3-center">LATEST NEWS</h2>
     <p class="w3-opacity w3-center">
       <i>Get the latest updates in rock and alternative music, from new album releases to concert tours and band interviews. Stay tuned for all the exciting news and trends in the world of rock!</i>
-    </p><br>
-
-    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px; display: flex; justify-content: center;">
+    </p>
+    <br>
+    <div class="w3-row-padding">
       <div class="album-card">
         <img src="images/hang.jpeg" alt="Steve Hill" class="album-image">
         <div class="w3-container w3-white">
@@ -98,7 +98,6 @@ require "nav.php";
           <a href="https://www.newreleasesnow.com/album/steve-hill-hanging-on-a-string" target="_blank" class="w3-button w3-black w3-margin-bottom">READ MORE</a>
         </div>
       </div>
-
       <div class="album-card">
         <img src="images/americang.jpeg" alt="Tinkertown" class="album-image">
         <div class="w3-container w3-white">
@@ -108,7 +107,6 @@ require "nav.php";
           <a href="https://www.newreleasesnow.com/album/tinkertown-american-gothic" target="_blank" class="w3-button w3-black w3-margin-bottom">READ MORE</a>
         </div>
       </div>
-
       <div class="album-card">
         <img src="images/linkedinpark.jpeg" alt="Linkin Park" class="album-image">
         <div class="w3-container w3-white">
@@ -121,6 +119,7 @@ require "nav.php";
     </div>
   </div>
 </div>
+
 
 
 
