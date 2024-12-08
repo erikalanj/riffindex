@@ -120,7 +120,7 @@
 
 html,
 body {
-  min-height: 100vh;
+  height: 100%;
   background-color: #dfdfdf;
   margin: 0;
   padding: 0;
@@ -273,6 +273,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-top: auto;
 }
 
 .footer a {

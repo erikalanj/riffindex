@@ -38,69 +38,79 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
 </head>
 
 <body>
-    <div class="band-container">
-        <h1 class="text-center mb-4">Band Database</h1>
+    <div class="body-content">
+        <div class="band-container">
+            <h1 class="text-center mb-4">Band Database</h1>
 
-        <!-- Navigation Buttons -->
-        <div class="text-center mb-4">
-            <?php if ($user_role === 'admin'): ?>
-                <a href="band_database.php" class="btn btn-primary btn-lg">Band Database</a>
-                <a href="user_database.php" class="btn btn-secondary btn-lg">User Database</a>
-            <?php endif; ?>
-        </div>
-
-        <!-- Band Table -->
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Band Name</th>
-                    <th>Founded</th>
-                    <th>Members</th>
-                    <th>Genre</th>
-                    <th>Activity Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($bands as $band): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($band['name']); ?></td>
-                        <td><?php echo htmlspecialchars($band['date_created']); ?></td>
-                        <td><?php echo htmlspecialchars($band['members']); ?></td>
-                        <td><?php echo htmlspecialchars($band['genre']); ?></td>
-                        <td><?php echo htmlspecialchars($band['activity_status']); ?></td>
-                        <td>
-                            <a href="view_band.php?id=<?php echo $band['id']; ?>" class="btn btn-info btn-sm">View</a>
-                            <?php if ($user_role === 'admin'): ?>
-                            <br>
-                            <br>
-                                <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <br>
-                                <br>
-                                <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                            <?php endif; ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
-        <!-- Pagination -->
-        <nav>
-            <ul class="pagination justify-content-center">
-                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                    <li class="page-item <?php if ($i === $page) echo 'active'; ?>">
-                        <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    </li>
-                <?php endfor; ?>
-            </ul>
-        </nav>
-
-        <?php if ($user_role === 'admin'): ?>
-            <div class="text-center mt-4">
-                <a href="add_band.php" class="btn btn-success btn-lg">Add New Band</a>
+            <!-- Navigation Buttons -->
+            <div class="text-center mb-4">
+                <?php if ($user_role === 'admin'): ?>
+                    <a href="band_database.php" class="btn btn-primary btn-lg">Band Database</a>
+                    <a href="user_database.php" class="btn btn-secondary btn-lg">User Database</a>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
+
+            <!-- Band Table -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Band Name</th>
+                        <th>Founded</th>
+                        <th>Members</th>
+                        <th>Genre</th>
+                        <th>Activity Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($bands as $band): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($band['name']); ?></td>
+                            <td><?php echo htmlspecialchars($band['date_created']); ?></td>
+                            <td><?php echo htmlspecialchars($band['members']); ?></td>
+                            <td><?php echo htmlspecialchars($band['genre']); ?></td>
+                            <td><?php echo htmlspecialchars($band['activity_status']); ?></td>
+                            <td>
+                                <a href="view_band.php?id=<?php echo $band['id']; ?>" class="btn btn-info btn-sm">View</a>
+                                <?php if ($user_role === 'admin'): ?>
+                                    <br>
+                                    <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <br>
+                                    <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                        <li class="page-item <?php if ($i === $page) echo 'active'; ?>">
+                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </nav>
+
+            <?php if ($user_role === 'admin'): ?>
+                <div class="text-center mt-4">
+                    <a href="add_band.php" class="btn btn-success btn-lg">Add New Band</a>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="review_requests.php" class="btn btn-success btn-lg">Review Requests</a>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($user_role === 'member'): ?>
+                <div class="text-center mt-4">
+                    <a href="request_band.php" class="btn btn-warning btn-lg">Request Band</a>
+                </div>
+            <?php endif; ?>
+
+        </div>
     </div>
 
     <style>

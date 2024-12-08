@@ -21,6 +21,20 @@ CREATE TABLE bands (
     description TEXT NOT NULL 
 );
 
+CREATE TABLE band_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    band_name VARCHAR(255) NOT NULL,
+    date_created DATE,
+    members TEXT,
+    genre VARCHAR(100),
+    description TEXT,
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
 -- insert sample data including band descriptions
 INSERT INTO bands (name, date_created, members, activity_status, genre, description) VALUES
 ('Nirvana', '1987-01-01', 'Kurt Cobain, Krist Novoselic, Dave Grohl', 'inactive', 'alt rock', 'Nirvana was a groundbreaking alternative rock band known for their raw sound and the influence of Kurt Cobain. Their album "Nevermind" changed the landscape of rock music forever.'),

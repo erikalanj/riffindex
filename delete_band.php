@@ -49,38 +49,40 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
+    <div class="body-content">
+        <div class="band-container">
+            <h1>Delete Band</h1>
 
-    <div class="band-container">
-        <h1>Delete Band</h1>
+            <!-- Button to trigger the modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete Band "<?php echo htmlspecialchars($band['name']); ?>"
+            </button>
 
-        <!-- Button to trigger the modal -->
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-            Delete Band "<?php echo htmlspecialchars($band['name']); ?>"
-        </button>
-
-        <!-- Modal Structure -->
-        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger text-white">
-                        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete the band "<?php echo htmlspecialchars($band['name']); ?>"?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <!-- Form for deletion -->
-                        <form method="POST" action="delete_band.php?id=<?php echo $band['id']; ?>" style="display: inline;">
-                            <input type="hidden" name="band_id" value="<?php echo $band['id']; ?>">
-                            <button type="submit" class="btn btn-danger" name="confirm" value="yes">Yes, Delete</button>
-                        </form>
+            <!-- Modal Structure -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger text-white">
+                            <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete the band "<?php echo htmlspecialchars($band['name']); ?>"?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <!-- Form for deletion -->
+                            <form method="POST" action="delete_band.php?id=<?php echo $band['id']; ?>" style="display: inline;">
+                                <input type="hidden" name="band_id" value="<?php echo $band['id']; ?>">
+                                <button type="submit" class="btn btn-danger" name="confirm" value="yes">Yes, Delete</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -89,6 +91,4 @@ if (isset($_GET['id'])) {
 
 </html>
 
-<?php
-require "foot.php";
-?>
+<?php require "foot.php"; ?>

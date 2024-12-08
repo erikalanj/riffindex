@@ -41,64 +41,66 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
 </head>
 
 <body>
-    <div class="band-container">
-        <h1 class="text-center mb-4">User Database</h1>
+    <div class="body-content">
+        <div class="band-container">
+            <h1 class="text-center mb-4">User Database</h1>
 
-        <!-- Navigation Buttons -->
-        <div class="text-center mb-4">
-            <a href="band_database.php" class="btn btn-secondary btn-lg">Band Database</a>
-            <a href="user_database.php" class="btn btn-primary btn-lg">User Database</a>
-        </div>
+            <!-- Navigation Buttons -->
+            <div class="text-center mb-4">
+                <a href="band_database.php" class="btn btn-secondary btn-lg">Band Database</a>
+                <a href="user_database.php" class="btn btn-primary btn-lg">User Database</a>
+            </div>
 
-        <!-- User Table -->
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($users as $user): ?>
+            <!-- User Table -->
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td>
-                            <img src="<?php echo htmlspecialchars($user['image'] ?: 'default.jpg'); ?>" alt="User Image"
-                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
-                        </td>
-                        <td><?php echo htmlspecialchars($user['name'] ?: 'N/A'); ?></td>
-                        <td><?php echo htmlspecialchars($user['email'] ?: 'N/A'); ?></td>
-                        <td><?php echo htmlspecialchars($user['role'] ?: 'N/A'); ?></td>
-                        <td><?php echo htmlspecialchars($user['phone'] ?: 'N/A'); ?></td>
-                        <td>
-                            <a href="view_user.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">View</a>
-                            <?php if ($user_role === 'admin'): ?>
-                                <br>
-                                <br>
-                                <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <br>
-                                <br>
-                                <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                            <?php endif; ?>
-                        </td>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($users as $user): ?>
+                        <tr>
+                            <td>
+                                <img src="<?php echo htmlspecialchars($user['image'] ?: 'default.jpg'); ?>" alt="User Image"
+                                    style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
+                            </td>
+                            <td><?php echo htmlspecialchars($user['name'] ?: 'N/A'); ?></td>
+                            <td><?php echo htmlspecialchars($user['email'] ?: 'N/A'); ?></td>
+                            <td><?php echo htmlspecialchars($user['role'] ?: 'N/A'); ?></td>
+                            <td><?php echo htmlspecialchars($user['phone'] ?: 'N/A'); ?></td>
+                            <td>
+                                <a href="view_user.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">View</a>
+                                <?php if ($user_role === 'admin'): ?>
+                                    <br>
+                                    <br>
+                                    <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <br>
+                                    <br>
+                                    <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
 
-        <!-- Pagination -->
-        <nav>
-            <ul class="pagination justify-content-center">
-                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                    <li class="page-item <?php if ($i === $page) echo 'active'; ?>">
-                        <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    </li>
-                <?php endfor; ?>
-            </ul>
-        </nav>
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                        <li class="page-item <?php if ($i === $page) echo 'active'; ?>">
+                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </nav>
+        </div>
     </div>
 
     <style>

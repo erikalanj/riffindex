@@ -10,6 +10,9 @@ require "db_connect.php"; // Adjust to your actual database connection file
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+// Initialize password error message
+$password_error = '';
+
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect input values and sanitize them
@@ -26,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the passwords match
     if ($password !== $confirm_password) {
         $error = "Passwords do not match.";
+    } elseif (!preg_match('/^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/', $password)) {
+        // If password does not meet the security requirements
+        $password_error = "Password must be at least 8 characters long, include at least one number, and at least one special character.";
     } elseif ($image['error'] === UPLOAD_ERR_OK) {
         // Handle image upload
         $target_dir = "uploads/"; // Directory to store images
@@ -45,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Please upload a valid image.";
     }
 
-    if (empty($error)) {
+    if (empty($error) && empty($password_error)) {
         // Hash password
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $role = 'member'; // Default role for new users
@@ -75,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
-
 <div class="container">
     <div class="login-box">
         <div class="login-header">
@@ -86,6 +91,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (!empty($error)): ?>
             <div class="error-message" style="color: red;">
                 <?php echo $error; ?>
+            </div>
+        <?php endif; ?>
+
+        <!-- Display password error message if the password does not meet security requirements -->
+        <?php if (!empty($password_error)): ?>
+            <div style="color: red; font-size: 12px;">
+                <?php echo $password_error; ?>
             </div>
         <?php endif; ?>
 

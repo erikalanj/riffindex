@@ -47,33 +47,35 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
+    <div class="body-content">
 
-    <div class="band-container">
-        <h1>Delete User</h1>
+        <div class="band-container">
+            <h1>Delete User</h1>
 
-        <!-- Button to trigger the modal -->
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-            Delete User "<?php echo htmlspecialchars($user['name']); ?>"
-        </button>
+            <!-- Button to trigger the modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete User "<?php echo htmlspecialchars($user['name']); ?>"
+            </button>
 
-        <!-- Modal Structure -->
-        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger text-white">
-                        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete the user "<?php echo htmlspecialchars($user['name']); ?>"?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <!-- Form for deletion -->
-                        <form method="POST" action="delete_user.php?id=<?php echo $user['id']; ?>" style="display: inline;">
-                            <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
-                            <button type="submit" class="btn btn-danger" name="confirm" value="yes">Yes, Delete</button>
-                        </form>
+            <!-- Modal Structure -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger text-white">
+                            <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete the user "<?php echo htmlspecialchars($user['name']); ?>"?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <!-- Form for deletion -->
+                            <form method="POST" action="delete_user.php?id=<?php echo $user['id']; ?>" style="display: inline;">
+                                <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
+                                <button type="submit" class="btn btn-danger" name="confirm" value="yes">Yes, Delete</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,6 +89,4 @@ if (isset($_GET['id'])) {
 
 </html>
 
-<?php
-require "foot.php";
-?>
+<?php require "foot.php"; ?>
