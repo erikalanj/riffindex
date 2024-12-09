@@ -101,7 +101,7 @@
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 900; /* Ensure it's behind the header */
+  z-index: 900;
   top: 0;
   left: 0;
   background-color: #333;
@@ -111,8 +111,8 @@
 }
 
 .open-sidenav {
-  position: relative; /* Ensure it's within the header's context */
-  z-index: 1000; /* Matches the header z-index */
+  position: relative;
+  z-index: 1000;
 }
 .sidenav {
   z-index: 1000;
@@ -121,7 +121,6 @@
   z-index: 1100;
 }
 
-/* Ensure the body and html stretch the full height */
 html,
 body {
   height: 100%;
@@ -130,7 +129,6 @@ body {
   background-color: #dfdfdf;
 }
 
-/* Make the content area take up all available space except for the footer */
 .body-content {
   min-height: 100%;
   display: flex;
@@ -138,7 +136,6 @@ body {
   justify-content: space-between;
 }
 
-/* Styling for the footer */
 .footer {
   background-color: #333;
   padding: 20px 10px;
@@ -146,7 +143,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-top: auto; /* Ensures footer stays at the bottom */
+  margin-top: auto;
 }
 
 .footer a {

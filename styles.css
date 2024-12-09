@@ -448,15 +448,10 @@ section a {
   color: white;
 }
 
-/* end of signup  */
-
-/* CSS for logo image */
 .logo-img {
-  height: 50px; /* Adjust the size as needed */
-  width: auto; /* Maintains aspect ratio */
+  height: 50px;
+  width: auto;
 }
-
-/* this is under the riffindex info of index */
 
 .band-container {
   max-width: 800px;
@@ -489,18 +484,15 @@ section a {
   margin: 20px 0;
 }
 
-/* something */
-
-/* Tour Section Styles */
 #tour {
   background-color: #000;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Stack items vertically */
-  text-align: center; /* Center text */
-  padding: 64px 20px; /* Add padding to avoid edge overlap */
+  flex-direction: column;
+  text-align: center;
+  padding: 64px 20px;
 }
 
 .w3-container {
@@ -520,13 +512,12 @@ section a {
   opacity: 0.7;
 }
 
-/* Center the images and album cards */
 .w3-row-padding {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align the top of album cards */
-  gap: 32px; /* Space between the cards */
-  flex-wrap: wrap; /* Wrap content for smaller screens */
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .album-card {
@@ -534,14 +525,14 @@ section a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 300px; /* Prevent cards from being too wide */
+  max-width: 300px;
 }
 
 .album-image {
   width: 100%;
-  max-width: 250px; /* Ensure images fit within the card */
+  max-width: 250px;
   height: 250px;
-  object-fit: cover; /* Maintain aspect ratio while filling the space */
+  object-fit: cover;
 }
 
 .album-image:hover {
@@ -554,7 +545,6 @@ section a {
   text-align: center;
 }
 
-/* Links Styling */
 .w3-button.w3-black {
   background-color: #000;
   color: white;
@@ -611,7 +601,7 @@ section a {
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 5px;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
 .user-button:hover {
@@ -622,7 +612,7 @@ section a {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1; /* Ensure it appears above other elements */
+  z-index: 1;
 }
 
 .header-right button {
@@ -652,7 +642,7 @@ section a {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 900; /* Ensure it's behind the header */
+  z-index: 900;
   top: 0;
   left: 0;
   background-color: #333;
@@ -662,23 +652,19 @@ section a {
 }
 
 .open-sidenav {
-  position: relative; /* Ensure it's within the header's context */
-  z-index: 1000; /* Matches the header z-index */
+  position: relative;
+  z-index: 1000;
 }
 
 .mt-5 {
   margin-top: 40px !important;
 }
 
-/* contact */
-
-/* Container */
 #contact {
   max-width: 90%;
   margin: auto;
 }
 
-/* Form Inputs and Textarea */
 .form-control {
   width: 100%;
   border: 1px solid #ccc;
@@ -690,26 +676,23 @@ section a {
   resize: vertical;
 }
 
-/* Responsive Design */
 @media (min-width: 768px) {
   #contact {
     max-width: 800px;
   }
 }
 
-/* Contact Info Icons */
 .contact-info {
-  text-align: center; /* Centers the text and icons */
-  margin: 0 auto; /* Centers the container if it's a block element */
-  line-height: 1.8; /* Adjusts spacing between lines for better readability */
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
 .contact-info i {
-  margin-right: 10px; /* Adds space between icons and text */
-  vertical-align: middle; /* Aligns icons with the text */
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-/* Button Styling */
 .w3-button {
   display: inline-block;
   padding: 10px 20px;
