@@ -4,23 +4,26 @@ include('top.php');
 include 'db_connect.php';
 include('auth_check.php');
 
-
+// Fetch band details based on the 'id' parameter in the URL
 if (isset($_GET['id'])) {
     $band_id = $_GET['id'];
 
-    // Fetch the band details
+    // Prepare and execute SQL to fetch band data
     $sql = "SELECT * FROM bands WHERE id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':id', $band_id, PDO::PARAM_INT);
     $stmt->execute();
     $band = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // Exit if band is not found
     if (!$band) {
         echo "Band not found.";
         exit;
     }
 }
-$user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
+
+// Get the user's role from session (defaults to 'member')
+$user_role = $_SESSION['role'] ?? 'member';
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +33,6 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Band</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="band_styles.css">
 </head>
@@ -67,7 +69,6 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

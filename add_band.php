@@ -5,6 +5,7 @@ include('auth_check.php');
 include 'db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the form data
     $name = $_POST['name'];
     $date_created = $_POST['date_created'];
     $members = $_POST['members'];
@@ -12,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $activity_status = $_POST['activity_status'];
     $description = $_POST['description'];
 
+    // Prepare SQL statement to insert new band
     $sql = "INSERT INTO bands (name, date_created, members, genre, activity_status, description) 
             VALUES (:name, :date_created, :members, :genre, :activity_status, :description)";
     $stmt = $conn->prepare($sql);
@@ -22,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':activity_status', $activity_status);
     $stmt->bindParam(':description', $description);
 
+    // Execute query and provide feedback
     if ($stmt->execute()) {
         echo "Band added successfully!";
     } else {
@@ -42,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
     <div class="band-container">
         <h1>Add Band</h1>
         <form action="add_band.php" method="POST" class="band-form">
@@ -58,10 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn btn-primary mt-3">Add Band</button>
         </form>
     </div>
-
 </body>
 
 </html>
+
 <?php
 require "foot.php";
 ?>

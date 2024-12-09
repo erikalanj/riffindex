@@ -1,5 +1,7 @@
 <?php
 session_start();
+ob_start(); // Start output buffering
+
 require "top.php";
 require "nav.php";
 include('auth_check.php');
@@ -33,10 +35,14 @@ if (isset($_GET['query'])) {
 
 <body>
     <div class="container">
-        <h2 class="text-center mb-4">Search Guitar Tutorials</h2>
+        <!-- Header Section -->
+        <div class="header-container">
+            <h2>Search Guitar Tutorials</h2>
+            <p>Find your favorite songs or artists and start learning now!</p>
+        </div>
 
-        <!-- Search Form -->
-        <form class="mb-3" method="get" action="riff.php">
+        <!-- Search Form Section -->
+        <form class="search-form" method="get" action="riff.php">
             <div class="input-group">
                 <input type="text" class="form-control" autocomplete="off" placeholder="Enter song/artist name..."
                     id="search_term" name="query" required>
@@ -47,13 +53,12 @@ if (isset($_GET['query'])) {
         </form>
     </div>
 
-    <style>
-        .table-container {
-            margin-top: 60px;
-        }
-    </style>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
+<?php
+ob_end_flush(); // End output buffering and send output
+require "foot.php";
+?>

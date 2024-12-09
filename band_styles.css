@@ -71,7 +71,7 @@
 .band-table td {
   padding: 12px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #f0eeee;
 }
 
 .band-table th {
@@ -80,7 +80,7 @@
 }
 
 .band-table tr:hover {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 
 .band-actions button {
@@ -127,7 +127,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #dfdfdf;
 }
 
 /* Make the content area take up all available space except for the footer */

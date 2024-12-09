@@ -4,6 +4,7 @@ include('top.php');
 include 'db_connect.php';
 include('auth_check.php');
 
+// Check if the user ID is set in the URL
 if (isset($_GET['id'])) {
     $user_id = $_GET['id'];
 
@@ -14,18 +15,21 @@ if (isset($_GET['id'])) {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // If user not found, display an error
     if (!$user) {
         echo "User not found.";
         exit;
     }
 
+    // Handle form submission to update user information
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Update user information
+        // Get the form input
         $name = $_POST['name'];
         $email = $_POST['email'];
         $role = $_POST['role'];
         $phone = $_POST['phone'];
 
+        // Prepare the update query
         $sql = "UPDATE users 
                 SET name = :name, email = :email, role = :role, phone = :phone 
                 WHERE id = :id";
@@ -36,6 +40,7 @@ if (isset($_GET['id'])) {
         $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
         $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
 
+        // Execute the update query
         if ($stmt->execute()) {
             $update_status = 'success';
         } else {
@@ -52,7 +57,6 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit User</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="band_styles.css">
 </head>
@@ -92,6 +96,7 @@ if (isset($_GET['id'])) {
     </div>
 
     <?php if (isset($update_status)): ?>
+        <!-- Feedback Modal -->
         <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

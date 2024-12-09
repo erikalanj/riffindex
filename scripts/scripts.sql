@@ -31,7 +31,9 @@ CREATE TABLE band_requests (
     description TEXT,
     status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
     request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    reason TEXT,
+    activity_status ENUM('active', 'inactive') NOT NULL
 );
 
 

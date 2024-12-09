@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['user_id'];
-    $request_date = $_POST['request_date'];
     $band_name = $_POST['band_name'];
     $date_created = $_POST['date_created'];
     $members = $_POST['members'];
@@ -20,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reason = $_POST['reason'];
     $status = 'pending';
 
-    $sql = "INSERT INTO band_requests (user_id, request_date, band_name, date_created, members, activity_status, genre, description, reason, status) 
-            VALUES (:user_id, :request_date, :band_name, :date_created, :members, :activity_status, :genre, :description, :reason, :status)";
+    // Prepare SQL query for inserting the request
+    $sql = "INSERT INTO band_requests (user_id, band_name, date_created, members, activity_status, genre, description, reason, status) 
+            VALUES (:user_id, :band_name, :date_created, :members, :activity_status, :genre, :description, :reason, :status)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':user_id', $user_id);
-    $stmt->bindParam(':request_date', $request_date);
     $stmt->bindParam(':band_name', $band_name);
     $stmt->bindParam(':date_created', $date_created);
     $stmt->bindParam(':members', $members);
@@ -34,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':reason', $reason);
     $stmt->bindParam(':status', $status);
 
+    // Execute query and provide feedback
     if ($stmt->execute()) {
         echo "Request submitted successfully!";
     } else {
@@ -59,10 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
         <form action="request_band.php" method="POST" class="band-form">
             <h6>Request Date:</h6>
-            <input type="date" name="request_date" placeholder="Request Date" required>
             <input type="text" name="band_name" placeholder="Band Name" required>
             <h6>Band Creation:</h6>
-
             <input type="date" name="date_created" placeholder="Date Created" required>
             <textarea name="members" placeholder="Band Members" required></textarea>
             <select name="activity_status" required>
@@ -78,4 +76,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
 <?php require "foot.php"; ?>

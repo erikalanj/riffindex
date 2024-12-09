@@ -4,24 +4,25 @@ include('top.php');
 include 'db_connect.php';
 include('auth_check.php');
 
-
+// Check if band ID is provided in the URL
 if (isset($_GET['id'])) {
     $band_id = $_GET['id'];
 
-    // Fetch the band info for editing
+    // Fetch band info for editing
     $sql = "SELECT * FROM bands WHERE id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':id', $band_id, PDO::PARAM_INT);
     $stmt->execute();
     $band = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // If no band is found, show error
     if (!$band) {
         echo "Band not found.";
         exit;
     }
 
+    // Handle form submission to update band information
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Update band information
         $name = $_POST['name'];
         $date_created = $_POST['date_created'];
         $members = $_POST['members'];
@@ -29,6 +30,7 @@ if (isset($_GET['id'])) {
         $activity_status = $_POST['activity_status'];
         $description = $_POST['description'];
 
+        // Update query
         $sql = "UPDATE bands 
                 SET name = :name, date_created = :date_created, members = :members, genre = :genre, 
                     activity_status = :activity_status, description = :description 
@@ -42,6 +44,7 @@ if (isset($_GET['id'])) {
         $stmt->bindParam(':description', $description, PDO::PARAM_STR);
         $stmt->bindParam(':id', $band_id, PDO::PARAM_INT);
 
+        // Execute the update query
         if ($stmt->execute()) {
             $update_status = 'success';
         } else {

@@ -5,9 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 include 'db_connect.php'; // Include your database connection
 
-// Allow access to login.php and signup.php without a session
+// Allow access to login.php, about.php and signup.php without a session
 $current_page = basename($_SERVER['PHP_SELF']);
-$public_pages = ['login.php', 'signup.php'];
+$public_pages = ['login.php', 'signup.php', 'about.php'];
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     if (!in_array($current_page, $public_pages)) {

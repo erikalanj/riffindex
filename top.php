@@ -33,10 +33,12 @@
         <div class="header-right">
             <a href="about.php" class="about-link">About</a>
             <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+                <!-- If the user is logged in, show the username button -->
                 <button class="user-button" data-username="<?php echo htmlspecialchars($_SESSION['user_name']); ?>">
                     <?php echo htmlspecialchars($_SESSION['user_name']); ?>
                 </button>
             <?php else: ?>
+                <!-- If not logged in, show login/signup links -->
                 <a href="login.php">Login</a>
                 <a href="signup.php">Sign Up</a>
             <?php endif; ?>
@@ -58,6 +60,7 @@
             const openButton = document.querySelector(".open-sidenav");
             const closeButton = sidenav.querySelector(".closebtn");
 
+            // Open sidenav on clicking the open button
             if (openButton && sidenav) {
                 openButton.addEventListener("click", function() {
                     sidenav.style.width = "250px";
@@ -65,6 +68,7 @@
                 });
             }
 
+            // Close sidenav when the close button is clicked
             if (closeButton && sidenav) {
                 closeButton.addEventListener("click", function() {
                     sidenav.style.width = "0";
@@ -72,6 +76,7 @@
                 });
             }
 
+            // Handle user button hover and logout logic
             const userButton = document.querySelector(".user-button");
             if (userButton) {
                 const username = userButton.dataset.username;
@@ -83,6 +88,7 @@
                     userButton.textContent = username;
                 });
 
+                // Redirect to logout when user clicks the button
                 userButton.addEventListener("click", function() {
                     if (userButton.textContent === "Logout") {
                         window.location.href = "logout.php";

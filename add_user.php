@@ -12,10 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $image = $_FILES['image']['name'] ?: 'default.jpg';
     $image_tmp = $_FILES['image']['tmp_name'];
 
+    // If an image is uploaded, move it to the "uploads" directory
     if ($image_tmp) {
         move_uploaded_file($image_tmp, "uploads/$image");
     }
 
+    // Insert user data into the database
     $sql = "INSERT INTO users (name, email, role, phone, image) 
             VALUES (:name, :email, :role, :phone, :image)";
     $stmt = $conn->prepare($sql);
@@ -25,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':phone', $phone);
     $stmt->bindParam(':image', $image);
 
+    // Execute query and provide feedback
     if ($stmt->execute()) {
         echo "User added successfully!";
     } else {

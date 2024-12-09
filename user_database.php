@@ -1,32 +1,35 @@
 <?php
 session_start();
+
+// Check if the user is an admin before allowing access
 if ($_SESSION['role'] !== 'admin') {
     header("Location: band_database.php");
     exit();
 }
+
 include('top.php');
 include('auth_check.php');
 include 'db_connect.php';
 
-// Pagination logic
+// Pagination logic: Define how many items per page
 $items_per_page = 10;
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$offset = ($page - 1) * $items_per_page;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Current page from query string, default to 1
+$offset = ($page - 1) * $items_per_page; // Calculate the offset for the SQL query
 
 // Fetch total number of users for pagination
 $total_users_sql = "SELECT COUNT(*) FROM users";
 $total_users = $conn->query($total_users_sql)->fetchColumn();
-$total_pages = ceil($total_users / $items_per_page);
+$total_pages = ceil($total_users / $items_per_page); // Calculate total pages for pagination
 
 // Fetch users for the current page
 $sql = "SELECT * FROM users LIMIT :offset, :items_per_page";
 $stmt = $conn->prepare($sql);
-$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
-$stmt->bindParam(':items_per_page', $items_per_page, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT); // Bind the offset for pagination
+$stmt->bindParam(':items_per_page', $items_per_page, PDO::PARAM_INT); // Bind the limit for pagination
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
+$user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' role if not set
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +39,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Database</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="band_styles.css">
 </head>
@@ -67,6 +71,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
                     <?php foreach ($users as $user): ?>
                         <tr>
                             <td>
+                                <!-- Display user image or default if none exists -->
                                 <img src="<?php echo htmlspecialchars($user['image'] ?: 'default.jpg'); ?>" alt="User Image"
                                     style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
                             </td>
@@ -75,6 +80,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
                             <td><?php echo htmlspecialchars($user['role'] ?: 'N/A'); ?></td>
                             <td><?php echo htmlspecialchars($user['phone'] ?: 'N/A'); ?></td>
                             <td>
+                                <!-- View, Edit, and Delete actions for admin role -->
                                 <a href="view_user.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">View</a>
                                 <?php if ($user_role === 'admin'): ?>
                                     <br>
@@ -110,6 +116,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
         }
     </style>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
