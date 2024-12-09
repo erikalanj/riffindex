@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // Redirect logged-in users away from login.php
@@ -77,5 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <?php
+ob_end_flush();
 require "foot.php";
 ?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start(); // Start output buffering to prevent "headers already sent" error
 require "top.php"; // Includes the top section (head, opening body tag)
 require "nav.php"; // Includes the navigation bar
 
@@ -69,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->execute([$name, $email, $hashed_password, $role, $phone, $image_path])) {
                 // Redirect to login page after successful signup
                 header("Location: login.php");
-                exit();
+                exit(); // Make sure to exit to prevent further output
             } else {
                 $error = "Failed to register user.";
             }
@@ -137,5 +138,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <?php
+ob_end_flush(); // End output buffering and send output
 require "foot.php"; // Includes the footer and closing body/html tags
 ?>
