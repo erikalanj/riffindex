@@ -83,10 +83,8 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' role if not s
                                 <!-- View, Edit, and Delete actions for admin role -->
                                 <a href="view_user.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">View</a>
                                 <?php if ($user_role === 'admin'): ?>
-                                    <br>
-                                    <br>
+                                   <br>
                                     <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <br>
                                     <br>
                                     <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                                 <?php endif; ?>
