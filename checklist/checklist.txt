@@ -9,7 +9,7 @@ TaskList for Project:
 5. Ensure prepared statements to prevent SQL injection, etc. (DONE)
 6. Fix frontend stuff (change hamburger, ensure consistent styles) (DONE)
 7. Add reviews (if time), fix email thing (if time) (NOT DONE)
-8. Diagram
-9. Email Feature!!!!!!
-10. Try to figure out domain name!
-11. include a request feature in band database
+8. Diagram (DONE)
+9. Email Feature!!!!!! (DONE)
+10. Try to figure out domain name! (DONE)
+11. include a request feature in band database (DONE)
