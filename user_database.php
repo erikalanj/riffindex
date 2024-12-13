@@ -41,6 +41,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' role if not s
     <title>User Database</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="band_styles.css">
 </head>
 
@@ -80,14 +81,15 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' role if not s
                             <td><?php echo htmlspecialchars($user['role'] ?: 'N/A'); ?></td>
                             <td><?php echo htmlspecialchars($user['phone'] ?: 'N/A'); ?></td>
                             <td>
-                                <!-- View, Edit, and Delete actions for admin role -->
-                                <a href="view_user.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                <?php if ($user_role === 'admin'): ?>
-                                   <br>
-                                    <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <br>
-                                    <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                                <?php endif; ?>
+                                <div class="action-buttons d-flex justify-content-center">
+                                    <a href="view_user.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+
+                                    <?php if ($user_role === 'admin'): ?>
+                                        <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                        <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                                    <?php endif; ?>
+                                </div>
+                            </td>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -106,13 +108,6 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' role if not s
             </nav>
         </div>
     </div>
-
-    <style>
-        .band-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-    </style>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

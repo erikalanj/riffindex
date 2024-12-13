@@ -34,6 +34,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Band Database</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="band_styles.css">
 </head>
 
@@ -71,13 +72,14 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
                             <td><?php echo htmlspecialchars($band['genre']); ?></td>
                             <td><?php echo htmlspecialchars($band['activity_status']); ?></td>
                             <td>
-                                <a href="view_band.php?id=<?php echo $band['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                <?php if ($user_role === 'admin'): ?>
-                                    <br>
-                                    <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <br>
-                                    <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                                <?php endif; ?>
+                                <div class="action-buttons d-flex justify-content-center">
+                                    <a href="view_band.php?id=<?php echo $band['id']; ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+
+                                    <?php if ($user_role === 'admin'): ?>
+                                        <a href="edit_band.php?id=<?php echo $band['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                        <a href="delete_band.php?id=<?php echo $band['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                                    <?php endif; ?>
+                                </div>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -113,12 +115,7 @@ $user_role = $_SESSION['role'] ?? 'member'; // Default to 'member' if not set
         </div>
     </div>
 
-    <style>
-        .band-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-    </style>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
