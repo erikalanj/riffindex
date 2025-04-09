@@ -14,6 +14,8 @@ require "nav.php";
   <img src="images/abuotimg3.jpg" alt="Rock Band 3">
 </div>
 
+
+
 <!-- about content -->
 <div class="about-page">
   <h2 class="about-title">Rock Out with RiffIndex!</h2>
